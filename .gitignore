@@ -128,3 +128,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Eleventy output
+_site
+
+# UML image files
+src/assets/*.png
+
+# VSCode settings
+.vscode

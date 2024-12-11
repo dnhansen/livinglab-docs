@@ -1,0 +1,14 @@
+{
+  "name": "livinglab-docs",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "type": "module",
+  "author": "Danny Nygård Hansen <dnh@qgg.au.dk>",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "repository": "github:dnhansen/livinglab-docs",
+  "private": true
+}

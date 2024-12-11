@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --page-width: 800px;
+}
+
+/* Page layout */
+
+#header-main {
+    height: 60px;
+    line-height: 60px;
+}
+
+#header-main > * {
+    vertical-align: text-bottom;
+}
+
+#header-main, main {
+    margin: 0 auto;
+    max-width: var(--page-width);
+}
+
+#header-main *, #nav * {
+    display: inline;
+}
+
+#nav {
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* Header */
+
+header {
+    font-family: "Zilla Slab";
+    background-color: rgb(247,244,243);
+    border-bottom: solid 4px rgb(217,214,213);
+    /* border-bottom: solid 4px rgb(158,195,161); */
+}
+
+h1 {
+    font-size: 20px;
+    color: rgb(190,22,34);
+    margin-right: 8px;
+}
+
+#nav li {
+    font-size: 20px;
+    color: rgb(60,60,59);
+    margin: 0 8px;
+}
+
+header a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+/* Main */
+
+main {
+    font-family: "Open Sans";
+}
+
+h2, h3, h4 {
+    color: rgb(60,60,59)
+}
+
+a {
+    color: rgb(21, 103, 216);
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+}

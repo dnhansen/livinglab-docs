@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections.views
+  size: 1
+  alias: view
+permalink: "views/{{ view.fileName }}/index.html"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ view.title }}"
+---
+
+<h2>{{ view.title }}</h2>
+<h3>Primary presentation</h3>
+<img src="/assets/{{ view.presentation }}" />
+
+{% if view.elements %}
+  <h3>Element catalogue</h3>
+  {% for element in view.elements %}
+    <h4>{{ element.title }}</h4>
+    {{ element.content | safe }}
+  {% endfor %}
+{% endif %}
