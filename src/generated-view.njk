@@ -1,0 +1,29 @@
+---
+pagination:
+  data: collections.views
+  size: 1
+  alias: view
+permalink: "views/{{ view.fileName }}/index.html"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ view.title }}"
+---
+
+<h2>{{ view.title }}</h2>
+<h3>Primary presentation</h3>
+<object
+  class="presentation toggle"
+  data="/assets/{{ view.presentation }}-light.svg"
+  data-light="/assets/{{ view.presentation }}-light.svg"
+  data-dark="/assets/{{ view.presentation }}-dark.svg"></object>
+<p class="presentation-key">Key: {{ view.key }}</p>
+
+{% if view.elements %}
+  <h3>Element catalogue</h3>
+  {% for element in view.elements %}
+    <div class="catalogue-element-container">
+      <h4 class="catalogue-element">{{ element.title }}</h4>
+      {{ element.content | safe }}
+    </div>
+  {% endfor %}
+{% endif %}

@@ -1,6 +1,7 @@
 {
     "title": "Top-level module layer view",
-    "presentation": "layers.drawio.png",
+    "presentation": "layers",
+    "key": "UML (package diagram)",
     "elements": [
         {
             "title": "User interface",

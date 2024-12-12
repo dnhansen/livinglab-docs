@@ -1,6 +1,7 @@
 {
     "title": "Deployment view",
-    "presentation": "deployment.drawio.png",
+    "presentation": "deployment",
+    "key": "UML (deployment diagram)",
     "elements": [
         {
             "title": "End user machines",

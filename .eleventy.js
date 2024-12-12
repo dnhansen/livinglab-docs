@@ -4,8 +4,11 @@ import { join, extname, basename } from 'path';
 export default function(eleventyConfig) {
 	eleventyConfig.setLayoutResolution(false);
     eleventyConfig.addPassthroughCopy("src/css/*");
+    eleventyConfig.addPassthroughCopy("src/scripts/*");
     eleventyConfig.addPassthroughCopy("src/assets/*.png");
+    eleventyConfig.addPassthroughCopy("src/assets/*.svg");
     eleventyConfig.addWatchTarget("src/css/");
+    eleventyConfig.addWatchTarget("src/scripts/");
     eleventyConfig.addWatchTarget("src/assets/");
 
     // Create collection of views

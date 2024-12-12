@@ -1,0 +1,14 @@
+- Use flexbox to make sticky footer.
+- Fix flashing when dark mode, changing pages. (Use Ajax??)
+- Drawio files are much simpler than SVGs, at least when the SVGs are exported by drawio. Consider setting up a pipeline to modify these files instead! (Is that even possible if I want to use webfonts?)
+- cnc view: "static files" textbox is just barely wide enough. It seems like when rendered by the browser it sometimes spills over into two lines. Make it a bit wider.
+- cnc view: Should browser be greyed out to denote it is not strictly speaking part of the application?
+- How and where to specify which technologies we use? E.g., in cnc view, which server are we using for the reverse proxy?
+- Deployment view: The line saying "artifact" should say "internet".
+- Where to put information about the network layout? In the deployment view?
+- Decide on which fonts to use for UML diagrams. Right now the module layer view uses a different font than everything else.
+- Somehow find out how large the UML diagrams are (what does size even mean for SVGs??) and put this in the HTML to improve rendering.
+- Dark mode: Contrast between background and text colour.
+- Sometimes the localStorage doesn't update when clicking the button. It seems like this happens when: On either index or views page (anything that is not a particular view page), and this page was accessed when in dark mode. If one of these pages is accessed in light mode, then everything works fine. Refreshing doesn't fix it.
+- Decide what to include on every view page.
+- Literature references, explanations of notation (UML stereotypes etc.).
