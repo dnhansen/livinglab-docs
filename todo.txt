@@ -12,3 +12,5 @@
 - Sometimes the localStorage doesn't update when clicking the button. It seems like this happens when: On either index or views page (anything that is not a particular view page), and this page was accessed when in dark mode. If one of these pages is accessed in light mode, then everything works fine. Refreshing doesn't fix it.
 - Decide what to include on every view page.
 - Literature references, explanations of notation (UML stereotypes etc.).
+- CI/CD
+- Fix indentation everywhere so it conforms to standards for each language.
