@@ -119,9 +119,8 @@ a {
 }
 
 main a {
-    text-decoration: none;
-    border-bottom: thin solid;
-    padding-bottom: 1px;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
 }
 
 a[href*="//"]::after {
