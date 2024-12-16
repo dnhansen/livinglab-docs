@@ -129,8 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Eleventy output (commented out to deploy using GitHub Pages)
-# _site
+# Eleventy output
+_site
 
 # UML image files
 src/assets/*.png
