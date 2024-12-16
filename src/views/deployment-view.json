@@ -1,27 +1,22 @@
 {
     "title": "Deployment view",
-    "presentation": "deployment",
-    "key": "UML (deployment diagram)",
+    "presentation": {
+        "type": "image/svg+xml",
+        "path": "deployment",
+        "key": "UML (deployment diagram)"
+    },
     "elements": [
         {
             "title": "End user machines",
-            "content": "<p>This node represents users who can access the application. Note that after the web application is served to the user by the reverse proxy, the application runs in the user's browser on the user's machine.</p>"
+            "content": "<p>This node represents users who can access the application. After the web application is served to the user by the reverse proxy, the application runs in the user's browser on the user's machine.</p><p>Note that the same browser can run multiple instances of the web application, and the same machine can run multiple browsers. Multiple instances of the web application can be connected to the web server simultaneously.</p>"
         },
         {
             "title": "Web server",
-            "content": "<p>TODO</p>"
+            "content": "<p>Represents the physical server on which the reverse proxy and the back-end application are deployed.</p>"
         },
         {
             "title": "Database server",
-            "content": "<p>TODO</p>"
-        },
-        {
-            "title": "Web application, reverse proxy, back-end, DBMS",
-            "content": "<p>TODO</p>"
-        },
-        {
-            "title": "Firewall",
-            "content": "<p>TODO: Does this belong here? Can be represented as nodes/environmental elements.</p>"
+            "content": "<p>This node represents the physical server on which the database management system is deployed, and hence where the database is stored.</p>"
         }
     ]
 }

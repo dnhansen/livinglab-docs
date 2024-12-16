@@ -1,7 +1,10 @@
 {
     "title": "Top-level C&C view",
-    "presentation": "cnc",
-    "key": "UML (component diagram)",
+    "presentation": {
+        "type": "image/svg+xml",
+        "path": "cnc",
+        "key": "UML (component diagram)"
+    },
     "elements": [
         {
             "title": "Web browser",

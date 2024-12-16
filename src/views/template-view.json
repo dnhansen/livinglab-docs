@@ -1,0 +1,28 @@
+{
+    "title": "Template:ArchitectureViewTemplate",
+    "presentation": {
+        "text": "<p>TODO: Add a diagram or a non-graphical representation that shows the elements and relations of this view. Optionally include a notation key indicating the notation used.</p>"
+    },
+    "elements": [
+        {
+            "title": "End user machines",
+            "content": "<p>This node represents users who can access the application. Note that after the web application is served to the user by the reverse proxy, the application runs in the user's browser on the user's machine.</p>"
+        },
+        {
+            "title": "Web server",
+            "content": "<p>TODO</p>"
+        },
+        {
+            "title": "Database server",
+            "content": "<p>TODO</p>"
+        },
+        {
+            "title": "Web application, reverse proxy, back-end, DBMS",
+            "content": "<p>TODO</p>"
+        },
+        {
+            "title": "Firewall",
+            "content": "<p>TODO: Does this belong here? Can be represented as nodes/environmental elements.</p>"
+        }
+    ]
+}

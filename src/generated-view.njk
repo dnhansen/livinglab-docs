@@ -7,16 +7,30 @@ permalink: "views/{{ view.fileName }}/index.html"
 layout: layouts/base.njk
 eleventyComputed:
   title: "{{ view.title }}"
+  presentationType: "{{ view.presentation.type }}"
+  presentationPath: "{{ view.presentation.path }}"
+  presentationText: "{{ view.presentation.text }}"
+  presentationKey: "{{ view.presentation.key }}"
 ---
 
 <h2>{{ view.title }}</h2>
 <h3>Primary presentation</h3>
-<object
-  class="presentation toggle"
-  data="/assets/{{ view.presentation }}-light.svg"
-  data-light="/assets/{{ view.presentation }}-light.svg"
-  data-dark="/assets/{{ view.presentation }}-dark.svg"></object>
-<p class="presentation-key">Key: {{ view.key }}</p>
+{% if presentationPath %}
+  <div style="width: {{ presentationWidth }}; height: {{ presentationHeight }}">
+    <object
+      type="{{ presentationType }}"
+      class="toggle"
+      data="/assets/{{ presentationPath }}-light.svg"
+      data-light="/assets/{{ presentationPath }}-light.svg"
+      data-dark="/assets/{{ presentationPath }}-dark.svg"></object>
+  </div>
+{% endif %}
+{% if presentationKey %}
+  <p class="presentation-key">Key: {{ presentationKey }}</p>
+{% endif %}
+{% if presentationText %}
+  {{ view.presentation.text | safe }}
+{% endif %}
 
 {% if view.elements %}
   <h3>Element catalogue</h3>

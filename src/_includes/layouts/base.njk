@@ -4,14 +4,52 @@
     <script src="/scripts/script.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/style.css">
-    <title>{{title}}</title>
+    <title>{{title | safe}}</title>
 </head>
 <body>
     <header>
         <div id="header-main">
-            <h1><a href="/">LivingLab Documentation</a></h1><ul id="nav"><li><a href="/views/">Views</a></li><li><button id="theme-toggle">Toggle</button</li></ul>
+            <h1><a href="/">LivingLab Documentation</a></h1><ul id="nav"><li><button id="theme-toggle">Dark/light</button</li></ul>
         </div>
     </header>
+    <nav>
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="">Documentation roadmap</a> (TODO)</li>
+            <li><a href="/how-a-view-is-documented/">How a view is documented</a></li>
+            <li><a href="">System overview</a> (TODO)</li>
+            <li>Views
+                <ol>
+                    <li>Module views
+                        <ol>
+                            <li><a href="/views/top-level-module-layer-view/">Top-level module layer view</a></li>
+                            <li><a href="">TODO</a></li>
+                            <li><a href="">Data model</a> (TODO)</li>
+                        </ol>
+                    </li>
+                    <li>C&C views
+                        <ol>
+                            <li><a href="/views/top-level-cnc-view/">Top-level C&C view</a></li>
+                            <li><a href="">TODO</a></li>
+                        </ol>
+                    </li>
+                    <li>Allocation views
+                        <ol>
+                            <li><a href="/views/deployment-view/">Deployment view</a></li>
+                            <li><a href="">TODO</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><a href="">Mapping between views</a> (TODO)</li>
+            <li>Directory
+                <ol>
+                    <li><a href="">Glossary</a> (TODO)</li>
+                    <li><a href="">References</a> (TODO)</li>
+                </ol>
+            </li>
+        </ol>
+      </nav>
     <main>
         {{ content | safe }}
     </main>
@@ -25,5 +63,19 @@
             </div>
         </div>
     </footer>
+    <script>
+  // Get the current page's URL path
+  const currentPath = window.location.pathname;
+
+  // Find all sidebar links
+  const links = document.querySelectorAll('nav a');
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || href + 'index.html' === currentPath) {
+      link.classList.add('current');
+    }
+  });
+</script>
 </body>
 </html>

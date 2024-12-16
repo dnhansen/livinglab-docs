@@ -1,5 +1,4 @@
 - Use flexbox to make sticky footer.
-- Fix flashing when dark mode, changing pages. (Use Ajax??)
 - Drawio files are much simpler than SVGs, at least when the SVGs are exported by drawio. Consider setting up a pipeline to modify these files instead! (Is that even possible if I want to use webfonts?)
 - cnc view: "static files" textbox is just barely wide enough. It seems like when rendered by the browser it sometimes spills over into two lines. Make it a bit wider.
 - cnc view: Should browser be greyed out to denote it is not strictly speaking part of the application?
@@ -7,10 +6,40 @@
 - Deployment view: The line saying "artifact" should say "internet".
 - Where to put information about the network layout? In the deployment view?
 - Decide on which fonts to use for UML diagrams. Right now the module layer view uses a different font than everything else.
-- Somehow find out how large the UML diagrams are (what does size even mean for SVGs??) and put this in the HTML to improve rendering.
+- Get SVGs to stop jumping. Have tried specifying height and width on <object> which doesn't work. Have also tried messing with the <svg> width, height and viewPort. Also tried wrapping in <div>.
 - Dark mode: Contrast between background and text colour.
-- Sometimes the localStorage doesn't update when clicking the button. It seems like this happens when: On either index or views page (anything that is not a particular view page), and this page was accessed when in dark mode. If one of these pages is accessed in light mode, then everything works fine. Refreshing doesn't fix it.
 - Decide what to include on every view page.
 - Literature references, explanations of notation (UML stereotypes etc.).
 - CI/CD
 - Fix indentation everywhere so it conforms to standards for each language.
+- Alt text for UML diagrams.
+- Table of contents - page, sidebar, sitemap vs. current page contents.
+- I've put the view template in the /views directory. Should we have a /templates directory? Probably not, unless we get more templates somehow.
+- Is there a way to get Eleventy to remove all unnecessary whitespace? At least that arising from newlines?
+- ToC: I probably don't want links to pages like "Views" or "Module views" or "Directory".
+- Write view template. And understand the name of the template!
+- Clarify component types vs. instances in C&C and allocation views.
+- Refactor script in body of base.njk which updates the nav.
+- Consider whether the sidebar should be on every page. Maybe documentation should only be one part of the site, maybe also an "about" section, or something like that. Then put links to these in header (along with link to docs), and only show sidebar on docs pages.
+- Sidebar: Consider best css to highlight current page in sidebar.
+- Sidebar: Consider collapsible sections.
+- Sidebar: Probably rewrite using something else; maybe flexbox or grid can work?
+- Sidebar: When scrolling to top of page and beyond, sidebar header sticks above page header which looks ugly.
+- Deployment view: Fix height of database server node on UML. Fix background colour of connector labels in dark mode.
+- Firewall: Probably don't include in anyway in the deployment view (since it's not a ), and probably also not in C&C views. Just in install view. I guess it depends on what kinds of firewalls Thami wants to use, so wait until I know what exactly he wants. I think the following:
+    - If network-based: Include in deployment view as nodes.
+    - If host-based: Include in install view.
+- Deployment view: End user machines run browsers which function as execution environments (I think?) in which the application runs. Potentially, multiple browsers (or even the same browser) can run multiple instances of the web app. This is not really reflected in the diagram, but maybe this is okay.
+- Mapping between views: Understand better the nature of these mappings. E.g., if a deployment view contains a component that is manifested by some artifact, and there is a C&C view that also contains said component, then which element is the component in the C&C view mapped to in the deployment view? The component, the artifact, or even both or neither?
+- List of software used to be visible on the site (Eleventy, draw.io, etc.). Right now it's on the index, do we want to move it?
+- Clean up in the imported fonts.
+- Rename script.js to something more descriptive. Maybe also style.css.
+- Make more robust solution to the arrow shown on external links.
+- Should UML diagrams be in figures (with captions)?
+
+FIXED
+- Sometimes the localStorage doesn't update when clicking the button. It seems like this happens when: On either index or views page (anything that is not a particular view page), and this page was accessed when in dark mode. If one of these pages is accessed in light mode, then everything works fine. Refreshing doesn't fix it. -- FIX: Bug in script.js which used querySelector instead of querySelectorAll, yielding null when there are no images, throwing an error.
+- Fix flashing when dark mode, changing pages. -- FIX: Seemed to have gone away on its own? If it returns, don't use AJAX, that's too complex.
+- Middleware pipeline C&C diagram: Maybe don't put every middleware element in the diagram, maybe just put it below somewhere, or just in the element catalogue.
+- Why is it "Template:ArchitectureViewTemplate"? Where does this notation come from?
+- In the generated view, using "safe" in the frontmatter still escapes < and >. Why?? Also, I thought "safe" was necessary to not escape &, but that doesn't seem to be the case after all.

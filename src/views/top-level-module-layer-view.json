@@ -1,7 +1,10 @@
 {
     "title": "Top-level module layer view",
-    "presentation": "layers",
-    "key": "UML (package diagram)",
+    "presentation": {
+        "type": "image/svg+xml",
+        "path": "layers",
+        "key": "UML (package diagram)"
+    },
     "elements": [
         {
             "title": "User interface",
