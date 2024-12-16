@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+:root {
+    --page-width: 800px;
+
+    --color-bg: white;
+    --color-border: rgb(213, 217, 214);
+    --color-text: rgb(49, 49, 48);
+    --color-heading: rgb(60,60,59);
+    --color-link: rgb(61, 126, 91);
+
+    --color-header-bg: rgb(243, 247, 245);
+    --color-header-title: rgb(61, 126, 91);
+    --color-header-menu: var(--color-heading);
+
+    --color-footer-text: var(--color-heading);
+}
+
+:root.dark {
+    --color-bg: rgb(27,27,27);
+    --color-border: rgb(133,133,133);
+    --color-text: rgb(226, 227, 231);
+    --color-heading: rgb(226, 227, 231);
+    --color-link: rgb(79,158,114);
+
+    --color-header-bg: rgb(40, 40, 40);
+    --color-header-title: rgb(79,158,114);
+    --color-header-menu: rgb(205,205,205);
+
+    --color-footer-text: var(--color-header-menu);
+}
+
+/* Page layout */
+
+#header-main {
+    height: 60px;
+    line-height: 60px;
+}
+
+#header-main > * {
+    vertical-align: text-bottom;
+}
+
+#header-main, main, #footer-main {
+    margin: 0 auto;
+    max-width: var(--page-width);
+}
+
+#header-main *, #nav * {
+    display: inline;
+}
+
+#nav {
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+
+/* Header */
+
+header {
+    font-family: "Zilla Slab";
+    background-color: var(--color-header-bg);
+    border-bottom: solid 4px var(--color-border);
+    /* border-bottom: solid 4px rgb(158,195,161); */
+}
+
+h1 {
+    font-size: 20px;
+    color: var(--color-header-title);
+    margin-right: 8px;
+}
+
+#nav li {
+    font-size: 20px;
+    color: var(--color-header-menu);
+    margin: 0 8px;
+}
+
+header a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+/* Main */
+
+main {
+    font-family: "Lora";
+    min-height: calc(100vh - 64px - 40px - 4px - 80px);
+}
+
+h2, h3, h4 {
+    color: var(--color-heading);
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+/* :is(h2, h3, h4):hover::before {
+    content: "#";
+    position: absolute;
+    margin-left: -0.8em;
+} */
+
+a {
+    color: var(--color-link);
+}
+
+main a {
+    text-decoration: none;
+    border-bottom: thin solid;
+    padding-bottom: 1px;
+}
+
+a[href*="//"]::after {
+    content: '↗';
+}
+
+.presentation-key {
+    font-style: italic;
+}
+
+.catalogue-element-container {
+    margin: 15px 0;
+}
+
+.catalogue-element {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline;
+}
+
+.catalogue-element::after {
+    content: ":";
+}
+
+.catalogue-element + * {
+    margin-top: 0;
+    display: inline;
+}
+
+/* Footer */
+
+footer {
+    color: var(--color-footer-text);
+    font-size: 12px;
+    font-family: "Lora";
+    background-color: var(--color-header-bg);
+    border-top: solid 4px var(--color-border);
+    margin-top: 40px;
+    padding-bottom: 100px;
+}
+
+footer a {
+    color: inherit;
+}
+
+.footer-left {
+    float: left;
+}
+
+.footer-right {
+    float: right;
+}
+
+.footer-left, .footer-right {
+    margin-top: 8px;
+}
+
+
+/* NAV */
+
+nav {
+    font-family: "Lora";
+    font-size: 12px;
+    position: fixed;
+    left: 20px;
+    /* top: 120px; */
+    width: 300px;
+    /* text-align: right; */
+}
+
+nav h2 {
+    font-size: 16px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ol {
+    list-style-type: disc;
+    /* padding: 0; */
+    padding-left: 2.5em;
+    line-height: 1.5;
+}
+
+nav ol ol {
+    list-style-type: decimal;
+    padding-left: 2.5em;
+}
+
+nav ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+nav a.current {
+    font-weight: bold;
+    background-color: var(--color-header-bg);
+}

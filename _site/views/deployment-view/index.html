@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/scripts/script.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Deployment view</title>
+</head>
+<body>
+    <header>
+        <div id="header-main">
+            <h1><a href="/">LivingLab Documentation</a></h1><ul id="nav"><li><button id="theme-toggle">Dark/light</button</li></ul>
+        </div>
+    </header>
+    <nav>
+        <h2>Contents</h2>
+        <ol>
+            <li><a href="">Documentation roadmap</a> (TODO)</li>
+            <li><a href="/how-a-view-is-documented/">How a view is documented</a></li>
+            <li><a href="">System overview</a> (TODO)</li>
+            <li>Views
+                <ol>
+                    <li>Module views
+                        <ol>
+                            <li><a href="/views/top-level-module-layer-view/">Top-level module layer view</a></li>
+                            <li><a href="">TODO</a></li>
+                            <li><a href="">Data model</a> (TODO)</li>
+                        </ol>
+                    </li>
+                    <li>C&C views
+                        <ol>
+                            <li><a href="/views/top-level-cnc-view/">Top-level C&C view</a></li>
+                            <li><a href="">TODO</a></li>
+                        </ol>
+                    </li>
+                    <li>Allocation views
+                        <ol>
+                            <li><a href="/views/deployment-view/">Deployment view</a></li>
+                            <li><a href="">TODO</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><a href="">Mapping between views</a> (TODO)</li>
+            <li>Directory
+                <ol>
+                    <li><a href="">Glossary</a> (TODO)</li>
+                    <li><a href="">References</a> (TODO)</li>
+                </ol>
+            </li>
+        </ol>
+      </nav>
+    <main>
+        
+<h2>Deployment view</h2>
+<h3>Primary presentation</h3>
+
+  <div style="width: ; height: ">
+    <object
+      type="image/svg+xml"
+      class="toggle"
+      data="/assets/deployment-light.svg"
+      data-light="/assets/deployment-light.svg"
+      data-dark="/assets/deployment-dark.svg"></object>
+  </div>
+
+
+  <p class="presentation-key">Key: UML (deployment diagram)</p>
+
+
+
+
+  <h3>Element catalogue</h3>
+  
+    <div class="catalogue-element-container">
+      <h4 class="catalogue-element">End user machines</h4>
+      <p>This node represents users who can access the application. After the web application is served to the user by the reverse proxy, the application runs in the user's browser on the user's machine.</p><p>Note that the same browser can run multiple instances of the web application, and the same machine can run multiple browsers. Multiple instances of the web application can be connected to the web server simultaneously.</p>
+    </div>
+  
+    <div class="catalogue-element-container">
+      <h4 class="catalogue-element">Web server</h4>
+      <p>Represents the physical server on which the reverse proxy and the back-end application are deployed.</p>
+    </div>
+  
+    <div class="catalogue-element-container">
+      <h4 class="catalogue-element">Database server</h4>
+      <p>This node represents the physical server on which the database management system is deployed, and hence where the database is stored.</p>
+    </div>
+  
+
+    </main>
+    <footer>
+        <div id="footer-main">
+            <div class="footer-left">
+                QGG Aarhus University
+            </div>
+            <div class="footer-right">
+                <a href="#">Back to top</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+  // Get the current page's URL path
+  const currentPath = window.location.pathname;
+
+  // Find all sidebar links
+  const links = document.querySelectorAll('nav a');
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || href + 'index.html' === currentPath) {
+      link.classList.add('current');
+    }
+  });
+</script>
+</body>
+</html>
