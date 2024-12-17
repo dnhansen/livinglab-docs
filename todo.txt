@@ -1,4 +1,3 @@
-- Use flexbox to make sticky footer.
 - Drawio files are much simpler than SVGs, at least when the SVGs are exported by drawio. Consider setting up a pipeline to modify these files instead! (Is that even possible if I want to use webfonts?)
 - cnc view: "static files" textbox is just barely wide enough. It seems like when rendered by the browser it sometimes spills over into two lines. Make it a bit wider.
 - cnc view: Should browser be greyed out to denote it is not strictly speaking part of the application?
@@ -23,8 +22,6 @@
 - Consider whether the sidebar should be on every page. Maybe documentation should only be one part of the site, maybe also an "about" section, or something like that. Then put links to these in header (along with link to docs), and only show sidebar on docs pages.
 - Sidebar: Consider best css to highlight current page in sidebar.
 - Sidebar: Consider collapsible sections.
-- Sidebar: Probably rewrite using something else; maybe flexbox or grid can work?
-- Sidebar: When scrolling to top of page and beyond, sidebar header sticks above page header which looks ugly.
 - Deployment view: Fix height of database server node on UML. Fix background colour of connector labels in dark mode.
 - Firewall: Probably don't include in anyway in the deployment view (since it's not a ), and probably also not in C&C views. Just in install view. I guess it depends on what kinds of firewalls Thami wants to use, so wait until I know what exactly he wants. I think the following:
     - If network-based: Include in deployment view as nodes.
@@ -45,3 +42,6 @@ FIXED
 - In the generated view, using "safe" in the frontmatter still escapes < and >. Why?? Also, I thought "safe" was necessary to not escape &, but that doesn't seem to be the case after all.
 - TODO: Light mode theme
 - Sidebar margins are weird - see if flexbox doesn't fix them.
+- Splash page, if we have more than the technical documentation.
+- "QGG LivingLab" in header, should probably not be h1 anymore.
+- For README: If the Eleventy server doesn't work, just keep "npm start" running, but use Live Server to actually view the contents. Then it gets updated automatically.

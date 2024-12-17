@@ -50,10 +50,10 @@ html {
     vertical-align: text-bottom;
 }
 
-main {
+/* main {
     margin: 0 auto;
     max-width: var(--page-width);
-}
+} */
 
 #header-main *, #nav * {
     display: inline;
@@ -111,7 +111,8 @@ header a {
 
 main {
     /* font-family: "Lora"; */
-    min-height: calc(100vh - 64px - 40px - 4px - 80px);
+    /* min-height: calc(100vh - 64px - 40px - 4px - 80px); */
+    flex: 1;
 }
 
 h2, h3, h4 {
@@ -206,11 +207,17 @@ footer a {
 nav {
     /* font-family: "Lora"; */
     font-size: 12px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     left: 20px;
     /* top: 120px; */
     width: 300px;
     /* text-align: right; */
+    height: fit-content;
+}
+
+.content-wrapper {
+    display: flex;
 }
 
 nav h2 {
