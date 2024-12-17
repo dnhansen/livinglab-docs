@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('theme-toggle');
+    const toggleButton = document.querySelector('.theme-selector');
     const root = document.documentElement;
     const imgs = document.querySelectorAll(".toggle");
   

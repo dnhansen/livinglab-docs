@@ -1,0 +1,22 @@
+.presentation-key {
+    font-style: italic;
+}
+
+.catalogue-element-container {
+    margin: 15px 0;
+}
+
+.catalogue-element {
+    font-size: inherit;
+    font-weight: bold;
+    display: inline;
+}
+
+.catalogue-element::after {
+    content: ":";
+}
+
+.catalogue-element + * {
+    /* margin-top: 0; */
+    display: inline;
+}
