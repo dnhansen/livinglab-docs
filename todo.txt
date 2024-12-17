@@ -41,6 +41,7 @@
 - Only apply view.css to views.
 - Colon after element in catalogue: In html template instead?
 - Consider top margin on "Contents" header in sidebar, since it affects the gap between the text and the top of the screen when scrolled down.
+- Add text before theme button so that it is "Theme: <button>Dark</button>", or "Light" when it is light. Maybe drop down instead?
 
 
 FIXED

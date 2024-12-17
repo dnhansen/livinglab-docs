@@ -47,6 +47,7 @@ body {
 
 header {
     display: flex;
+    justify-content: space-between;
 }
 
 .content-wrapper {
@@ -176,6 +177,7 @@ a[href*="//"]::after {
 .theme-selector {
     background-color: var(--button-background-color);
     color: var(--button-text-color);
+    padding-bottom: 2px;
     border: solid 1px var(--button-border-color);
     border-radius: 3px;
 }
