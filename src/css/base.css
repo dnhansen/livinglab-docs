@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 
 :root {
@@ -6,7 +6,7 @@
     --sidebar-width: 300px;
     --sidebar-gap: 20px;
 
-    --main-font: "Open Sans";
+    --main-font: "Source Sans 3";
 
     --background-color: rgb(255,255,255);
     --text-color: rgb(0,0,0);
@@ -152,7 +152,6 @@ a[href*="//"]::after {
 
 .sidebar ol {
     list-style-type: disc;
-    line-height: 1.5;
 }
 
 .sidebar ol ol {
