@@ -18,14 +18,14 @@
 }
 
 :root.dark {
-    --color-bg: rgb(27,27,27);
-    --color-border: rgb(133,133,133);
+    --color-bg: inherit; /* rgb(27,27,27); */
+    --color-border: rgb(66, 66, 66);
     --color-text: rgb(226, 227, 231);
-    --color-heading: rgb(226, 227, 231);
-    --color-link: rgb(79,158,114);
+    --color-heading: inherit; /* rgb(226, 227, 231); */
+    --color-link: rgb(119,170,255);
 
     --color-header-bg: rgb(40, 40, 40);
-    --color-header-title: rgb(79,158,114);
+    --color-header-title: inherit;
     --color-header-menu: rgb(205,205,205);
 
     --color-footer-text: var(--color-header-menu);
@@ -33,16 +33,24 @@
 
 /* Page layout */
 
+html {
+    background-color: rgb(34, 34, 34);
+    color: rgb(226,226,226);
+    font-family: 'Open Sans';
+}
+
 #header-main {
-    height: 60px;
-    line-height: 60px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0.5em 10px;
+    font-size: 90%;
 }
 
 #header-main > * {
     vertical-align: text-bottom;
 }
 
-#header-main, main, #footer-main {
+main {
     margin: 0 auto;
     max-width: var(--page-width);
 }
@@ -56,7 +64,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 0 1em;
     background-color: var(--color-bg);
     color: var(--color-text);
 }
@@ -65,14 +73,17 @@ body {
 /* Header */
 
 header {
-    font-family: "Zilla Slab";
-    background-color: var(--color-header-bg);
-    border-bottom: solid 4px var(--color-border);
+    /* font-family: "Zilla Slab"; */
+    /* background-color: var(--color-header-bg); */
+    border-bottom: solid 0.8px var(--color-border);
     /* border-bottom: solid 4px rgb(158,195,161); */
+    margin-top: 0.5em;
+    margin-bottom: 1.2em;
 }
 
 h1 {
-    font-size: 20px;
+    font-size: inherit;
+    font-weight: normal;
     color: var(--color-header-title);
     margin-right: 8px;
 }
@@ -88,11 +99,18 @@ header a {
     text-decoration: inherit;
 }
 
+#theme-toggle {
+    background-color: rgb(43,42,51);
+    color: inherit;
+    border: solid 1px;
+    border-radius: 3px;
+}
+
 
 /* Main */
 
 main {
-    font-family: "Lora";
+    /* font-family: "Lora"; */
     min-height: calc(100vh - 64px - 40px - 4px - 80px);
 }
 
@@ -113,6 +131,10 @@ h3 {
     position: absolute;
     margin-left: -0.8em;
 } */
+
+p {
+    line-height: 1.6;
+}
 
 a {
     color: var(--color-link);
@@ -153,11 +175,11 @@ a[href*="//"]::after {
 /* Footer */
 
 footer {
-    color: var(--color-footer-text);
-    font-size: 12px;
-    font-family: "Lora";
-    background-color: var(--color-header-bg);
-    border-top: solid 4px var(--color-border);
+    /* color: var(--color-footer-text); */
+    font-size: 90%;
+    /* font-family: "Lora"; */
+    /* background-color: var(--color-header-bg); */
+    border-top: solid 0.8px var(--color-border);
     margin-top: 40px;
     padding-bottom: 100px;
 }
@@ -182,7 +204,7 @@ footer a {
 /* NAV */
 
 nav {
-    font-family: "Lora";
+    /* font-family: "Lora"; */
     font-size: 12px;
     position: fixed;
     left: 20px;

@@ -43,3 +43,5 @@ FIXED
 - Middleware pipeline C&C diagram: Maybe don't put every middleware element in the diagram, maybe just put it below somewhere, or just in the element catalogue.
 - Why is it "Template:ArchitectureViewTemplate"? Where does this notation come from?
 - In the generated view, using "safe" in the frontmatter still escapes < and >. Why?? Also, I thought "safe" was necessary to not escape &, but that doesn't seem to be the case after all.
+- TODO: Light mode theme
+- Sidebar margins are weird - see if flexbox doesn't fix them.
