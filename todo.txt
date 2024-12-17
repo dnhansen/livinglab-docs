@@ -39,6 +39,8 @@
 - Splash page, if we have more than the technical documentation.
 - For README: If the Eleventy server doesn't work, just keep "npm start" running, but use Live Server to actually view the contents. Then it gets updated automatically.
 - Only apply view.css to views.
+- Colon after element in catalogue: In html template instead?
+- Consider top margin on "Contents" header in sidebar, since it affects the gap between the text and the top of the screen when scrolled down.
 
 
 FIXED

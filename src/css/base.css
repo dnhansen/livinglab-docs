@@ -78,7 +78,11 @@ main {
 header, footer {
     margin-top: 0.5em;
     margin-bottom: 1.2em;
-    padding: 0.5em 0;
+    padding: 0.5em 10px;
+}
+
+.sidebar {
+    padding-left: 10px;
 }
 
 header {
@@ -119,6 +123,10 @@ header, footer {
 
 .sidebar {
     font-size: 80%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
 }
 
 :is(header, .sidebar) a {
