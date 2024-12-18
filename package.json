@@ -1,8 +1,9 @@
 {
   "name": "livinglab-docs",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "watch": "npx @11ty/eleventy --watch",
+    "start": "npx @11ty/eleventy --serve"
   },
   "type": "module",
   "author": "Danny Nygård Hansen <dnh@qgg.au.dk>",

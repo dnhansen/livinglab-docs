@@ -18,8 +18,15 @@ To install all dependencies, run the command
 
 The `package.json` file defines the following scripts:
 
-- `start`, which builds the Eleventy project and starts a server which listens at `localhost:8080`.
-- `build`, which only builds the project. Note that the appropriate command is `npm run build`, since the command `npm build` is [shadowed by npm-build](https://docs.npmjs.com/cli/v6/commands/npm-build).
+- `build`: Builds the project.
+- `watch`: As `build`, but also listens for changes in the source directories and automatically builds on changes.
+- `start`: As `watch`, but also starts a local web server which listens at `localhost:8080`.
+
+To run these scripts, use the command
+
+    npm run <script>
+
+[Note that `start` can also be run using the command `npm start`.](https://docs.npmjs.com/cli/v11/commands/npm-start)
 
 ### Visual Studio Code Live Server
 
