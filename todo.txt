@@ -41,7 +41,11 @@
 - Only apply view.css to views.
 - Colon after element in catalogue: In html template instead?
 - Consider top margin on "Contents" header in sidebar, since it affects the gap between the text and the top of the screen when scrolled down.
-- Add text before theme button so that it is "Theme: <button>Dark</button>", or "Light" when it is light. Maybe drop down instead?
+- Fix styling on theme selector when menu is open.
+- Check if we can use media types/queries to toggle images as well.
+- Implement auto theme.
+- Check whether style load lags behind page load, and if there is a flicker. If so, maybe split up script that toggles theme so that it selects dark.css right after dark.css has loaded, but before the rest of the page loads. Then after page has loaded, check images.
+- Support multiple theme selectors in script.
 
 
 FIXED

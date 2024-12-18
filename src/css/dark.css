@@ -1,0 +1,13 @@
+:root {
+    --background-color: rgb(34, 34, 34);
+    --text-color: rgb(226,226,226);
+    --header-text-color: rgb(189,189,189);
+    --link-color: rgb(119,170,255);
+    --border-color: rgb(66, 66, 66);
+
+    --button-background-color: rgb(43,42,51);
+    --button-background-color-hover: rgb(82,82,94);
+    --button-text-color: rgb(251,251,254);
+    --button-border-color: rgb(143,143,157);
+    --button-border-color-hover: rgb(177,177,185);
+}

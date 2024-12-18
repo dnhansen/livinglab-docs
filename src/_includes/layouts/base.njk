@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/view.css">
+    <link rel="stylesheet" href="/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
     <title>{{title | safe}}</title>
 </head>
 <body>
     <header>
         <a href="/">QGG LivingLab</a>
-        <button class="theme-selector">Theme</button>
+        <span>
+            Theme:
+            <select class="theme-selector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </span>
     </header>
     <div class="content-wrapper">
     <nav class="sidebar">
