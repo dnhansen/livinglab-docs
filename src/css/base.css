@@ -160,19 +160,3 @@ a[href*="//"]::after {
 .sidebar ol ol ol {
     list-style-type: lower-alpha;
 }
-
-
-/* Theme selector button */
-
-.theme-selector {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
-    padding-bottom: 2px;
-    border: solid 1px var(--button-border-color);
-    border-radius: 3px;
-}
-
-.theme-selector:hover {
-    background-color: var(--button-background-color-hover);
-    border-color: var(--button-border-color-hover);
-}

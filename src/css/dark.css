@@ -10,4 +10,6 @@
     --button-text-color: rgb(251,251,254);
     --button-border-color: rgb(143,143,157);
     --button-border-color-hover: rgb(177,177,185);
+
+    color-scheme: dark;
 }
