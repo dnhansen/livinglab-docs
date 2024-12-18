@@ -46,6 +46,7 @@
 - Implement auto theme.
 - Check whether style load lags behind page load, and if there is a flicker. If so, maybe split up script that toggles theme so that it selects dark.css right after dark.css has loaded, but before the rest of the page loads. Then after page has loaded, check images.
 - Support multiple theme selectors in script.
+- Understand the "color-scheme" property of :root.
 
 
 FIXED
