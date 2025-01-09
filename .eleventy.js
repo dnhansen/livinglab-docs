@@ -34,6 +34,6 @@ export default function(eleventyConfig) {
             data: "_data",
             output: "docs"
         },
-        pathPrefix: "/docs",
+        pathPrefix: "/livinglab-docs",
     };
 }
