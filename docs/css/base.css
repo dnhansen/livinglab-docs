@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+:root {
+    --content-width: 800px;
+    --sidebar-width: 300px;
+    --sidebar-gap: 20px;
+
+    --main-font: "Source Sans 3";
+
+    --background-color: rgb(255,255,255);
+    --text-color: rgb(0,0,0);
+    --header-text-color: rgb(68,68,68);
+    --link-color: rgb(0, 114, 170);
+    --border-color: rgb(222,222,222);
+
+    --button-background-color: rgb(233,233,237);
+    --button-background-color-hover: rgb(208,208,215);
+    --button-text-color: rgb(0,0,0);
+    --button-border-color: rgb(143,143,157);
+    --button-border-color-hover: rgb(103,103,116);
+}
+
+
+/* Layout and dimensions */
+
+body {
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.theme-selector {
+    margin-left: 0.5em;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) var(--content-width);
+    flex: 1;
+    gap: var(--sidebar-gap);
+}
+
+footer {
+    margin-top: auto;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    grid-column: 1;
+}
+
+main {
+    grid-column: 2;
+}
+
+
+/* Boxes */
+
+header, footer {
+    margin-top: 0.5em;
+    margin-bottom: 1.2em;
+    padding: 0.5em 10px;
+}
+
+.sidebar {
+    padding-left: 10px;
+}
+
+header {
+    border-bottom: solid 0.8px var(--border-color);
+}
+
+footer {
+    border-top: solid 0.8px var(--border-color);
+}
+
+h1, .sidebar-header {
+    margin-top: 0;
+}
+
+ol, ul {
+    padding-left: 2em;
+}
+
+
+/* Colors and fonts */
+
+html {
+    background-color: var(--background-color);
+}
+
+body {
+    font-family: var(--main-font);
+}
+
+.content-wrapper {
+    color: var(--text-color);
+}
+
+header, footer {
+    font-size: 90%;
+    color: var(--header-text-color);
+}
+
+.sidebar {
+    font-size: 80%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+:is(header, .sidebar) a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:is(header, .sidebar) a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+a {
+    text-underline-offset: 2px;
+}
+
+main a {
+    color: var(--link-color);
+}
+
+.sidebar a.current {
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* Link decoration */
+
+a[href*="//"]::after {
+    content: '↗';
+}
+
+
+/* Sidebar list */
+
+.sidebar ol {
+    list-style-type: disc;
+}
+
+.sidebar ol ol {
+    list-style-type: decimal;
+}
+
+.sidebar ol ol ol {
+    list-style-type: lower-alpha;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/docs/scripts/script.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/docs/css/base.css">
+    <link rel="stylesheet" href="/docs/css/view.css">
+    <link rel="stylesheet" href="/docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
+    <title>Top-level module layer view</title>
+</head>
+<body>
+    <header>
+        <a href="/docs/">QGG LivingLab</a>
+        <span>
+            Theme:
+            <select class="theme-selector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </span>
+    </header>
+    <div class="content-wrapper">
+    <nav class="sidebar">
+        <h2 class="sidebar-header">Contents</h2>
+        <ol>
+            <li><a href=".">Documentation roadmap</a> (TODO)</li>
+            <li><a href="/docs/how-a-view-is-documented/">How a view is documented</a></li>
+            <li><a href=".">System overview</a> (TODO)</li>
+            <li>Views
+                <ol>
+                    <li>Module views
+                        <ol>
+                            <li><a href="/docs/views/top-level-module-layer-view/">Top-level module layer view</a></li>
+                            <li><a href=".">TODO</a></li>
+                            <li><a href=".">Data model</a> (TODO)</li>
+                        </ol>
+                    </li>
+                    <li>C&C views
+                        <ol>
+                            <li><a href="/docs/views/top-level-cnc-view/">Top-level C&C view</a></li>
+                            <li><a href=".">TODO</a></li>
+                        </ol>
+                    </li>
+                    <li>Allocation views
+                        <ol>
+                            <li><a href="/docs/views/deployment-view/">Deployment view</a></li>
+                            <li><a href=".">TODO</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><a href=".">Mapping between views</a> (TODO)</li>
+            <li>Directory
+                <ol>
+                    <li><a href=".">Glossary</a> (TODO)</li>
+                    <li><a href=".">References</a> (TODO)</li>
+                </ol>
+            </li>
+        </ol>
+      </nav>
+    <main>
+        
+<h1>Top-level module layer view</h1>
+<h2>Primary presentation</h2>
+
+  <div>
+    <object type="image/svg+xml" class="toggle" data="/docs/assets/layers-light.svg" data-light="/docs/assets/layers-light.svg" data-dark="/docs/assets/layers-dark.svg"></object>
+  </div>
+
+
+  <p class="presentation-key">Key: UML (package diagram)</p>
+
+
+
+
+  <h2>Element catalogue</h2>
+  
+    <div class="catalogue-element-container">
+      <h3 class="catalogue-element">User interface</h3>
+      <p>The web-based user interface is implemented in this module. (TODO: - Features - Implementation details (patterns + technologies))</p>
+    </div>
+  
+    <div class="catalogue-element-container">
+      <h3 class="catalogue-element">Back-end</h3>
+      <p>The business logic and domain model are implemented in this module. It provides the following functionality:</p><ul><li>Exposing an API to be consumed by users.</li><li>Authenticating users and authorising user requests.</li><li>Validates and handles user requests.</li><li>Handles errors.</li><li>Caching.</li></ul>
+    </div>
+  
+    <div class="catalogue-element-container">
+      <h3 class="catalogue-element">Database</h3>
+      <p>The database and database management system are implemented in this layer.</p>
+    </div>
+  
+
+    </main>
+    </div>
+    <footer>
+        QGG Aarhus University
+    </footer>
+    <script>
+  // Get the current page's URL path
+  const currentPath = window.location.pathname;
+
+  // Find all sidebar links
+  const links = document.querySelectorAll('nav a');
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || href + 'index.html' === currentPath) {
+      link.classList.add('current');
+    }
+  });
+</script>
+</body>
+</html>
