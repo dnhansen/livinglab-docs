@@ -21,8 +21,8 @@ eleventyComputed:
       type="{{ presentationType }}"
       class="toggle"
       data="/assets/{{ presentationPath }}-light.svg"
-      data-light="/assets/{{ presentationPath }}-light.svg"
-      data-dark="/assets/{{ presentationPath }}-dark.svg"></object>
+      data-light="{{ '/assets/' | url }}{{ presentationPath }}-light.svg"
+      data-dark="{{ '/assets/' | url }}{{ presentationPath }}-dark.svg"></object>
   </div>
 {% endif %}
 {% if presentationKey %}

@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync } from 'fs';
 import { join, extname, basename } from 'path';
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 export default function(eleventyConfig) {
 	eleventyConfig.setLayoutResolution(false);
@@ -10,6 +11,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addWatchTarget("src/css/");
     eleventyConfig.addWatchTarget("src/scripts/");
     eleventyConfig.addWatchTarget("src/assets/");
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
     // Create collection of views
     eleventyConfig.addCollection('views', () => {
@@ -30,7 +32,8 @@ export default function(eleventyConfig) {
             input: "src",
             includes: "_includes",
             data: "_data",
-            output: "_site"
-        }
+            output: "docs"
+        },
+        pathPrefix: "/docs",
     };
 }
