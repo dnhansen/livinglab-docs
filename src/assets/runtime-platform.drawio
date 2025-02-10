@@ -1,0 +1,61 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
+  <diagram name="Page-1" id="kCROIuODGlCXLBt_gYWh">
+    <mxGraphModel dx="875" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-1" value="&lt;b&gt;User host&lt;/b&gt;" style="verticalAlign=middle;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="200" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-2" value="&lt;div&gt;«processing node»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;Application server&lt;/b&gt;" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="244" y="70" width="170" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-8" value="&lt;div&gt;«artifact»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;Reverse proxy&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="269" y="120" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-9" value="" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=4;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="365" y="124" width="10" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-10" value="&lt;div&gt;«artifact»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;User interface&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="269" y="175" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-11" value="" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=4;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="365" y="179" width="10" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-12" value="&lt;div&gt;«execution environment»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;ASP.NET Core Runtime&lt;/b&gt;" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="254" y="230" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-13" value="&lt;div&gt;«artifact»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;BackEnd.dll&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="264" y="310" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-14" value="" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=4;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="314" width="10" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-15" value="&lt;div&gt;«processing node»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;Database server&lt;/b&gt;" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="478" y="130" width="170" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-20" value="&lt;div&gt;«execution environment»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;PostgreSQL DBMS&lt;/b&gt;" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=0;html=1;whiteSpace=wrap;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="488" y="180" width="140" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-21" value="&lt;div&gt;«artifact»&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;b&gt;DB schemas&lt;/b&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="499" y="246" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-22" value="" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=4;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="595" y="250" width="10" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-23" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=20;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="gD8QmcDuZdV1pweU74Lx-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="260" as="sourcePoint" />
+            <mxPoint x="244" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gD8QmcDuZdV1pweU74Lx-24" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=20;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="414" y="220" as="sourcePoint" />
+            <mxPoint x="478" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
