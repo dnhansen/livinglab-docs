@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+title: References
+---
+
+<h1>{{title}}</h1>
+<ol>
+  {% for ref in collections.references %}
+    <li id="{{ ref.id }}">
+      {{ ref.author }} ({{ ref.year }}). <span class="{{ ref.type }}">{{ ref.title }}</span>. {{ ref.edition }} edition. {{ ref.publisher }}. {{ ref.pages }} pp. ISBN: {{ ref.isbn }}.
+    </li>
+  {% endfor %}
+</ol>

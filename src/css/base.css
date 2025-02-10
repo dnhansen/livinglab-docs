@@ -137,6 +137,27 @@ a {
 main a {
     color: var(--link-color);
 }
+/* 
+main a {
+    text-decoration: none;
+    padding: 0.15em;
+    margin: -0.15em;
+    color: inherit;
+    -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+    box-shadow: inset 0 -0.125rem 0 0rem rgb(104, 155, 226);
+    transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1), color 200ms cubic-bezier(0.4, 0.0, 0.2, 1), padding 200ms cubic-bezier(0.4, 0.0, 0.2, 1), margin 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+main a:hover {
+    padding: 0.3em 0.25em 0.2em 0.25em;
+    margin: -0.25em;
+    box-shadow: inset 0 -1.5em 0 0 rgb(104, 155, 226);
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+} */
+
+
 
 .sidebar a.current {
     font-weight: bold;

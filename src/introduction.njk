@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Introduction
+---
+
+<h1>{{title}}</h1>
+
+<h2>Entity of interest</h2>
+<p>TODO</p>
+
+<h2>Purpose, scope, audience</h2>
+<p>TODO</p>
+
+<h2>Identifying information</h2>
+<p>This architecture description is authored by Danny Nygård Hansen (dnh@qgg.au.dk) at the Center for Quantitative Genetics and Genomics at Aarhus University.</p>
+
+<h2>Documentation status</h2>
+<p>Under development</p>
+
+<h2>Architectural design approach</h2>
+<p>
+    This architecture description (AD) is informed by the principles outlined in DS/ISO/IEC/IEEE 42010:2022 (ISO 42010:2022)(TODO ref) (in particular clause 6), the international standard for architecture descriptions of systems and software. While this AD leverages ISO 42010 as a guiding framework, the authors make no claims that it is compliant with all aspects of the standard.
+</p>
+<p>
+    The viewpoints used in this AD are drawn from the comprehensive set defined by Rozanski and Woods {% cite "rozanski-woods" %}, which is based on the 2011 version of ISO 42010(TODO ref). The viewpoints used in this AD include:
+</p>
+<ul>
+    <li>Context Viewpoint: Describes the system's external interfaces, dependencies, and interactions with its environment to provide a high-level understanding of its operational context.</li>
+    <li>Functional Viewpoint: Focuses on the system's functional structure, detailing the responsibilities of major components and their interactions to fulfill required capabilities.</li>
+    <li>Information Viewpoint: Examines the system's key data structures, their relationships, and the flow of information within and between components.</li>
+    <li>Concurrency Viewpoint: Addresses the system's runtime behavior, including threading, processes, and mechanisms for coordination and synchronization.</li>
+    <li>Development Viewpoint: Highlights the system's construction, including module organization, development tools, and build processes, to support the needs of developers.</li>
+    <li>Deployment Viewpoint: Details the mapping of software artifacts to hardware infrastructure, capturing the operational environment and deployment strategies.</li>
+    <li>Operational Viewpoint: Focuses on the system's ongoing management, monitoring, and operational processes to ensure stability and performance.</li>
+</ul>
+<p>
+    No claims are made that the specifications of these viewpoints found in {% cite "rozanski-woods" %} are compliant with either version of ISO 42010.
+</p>
+<p>
+    Many of the architecture view components used in this AD, as well as their specifications, are adapted from {% cite "rozanski-woods" %} and {% cite "clements-views-and-beyond" %}. Note that the former, being based on ISO 42010:2011, uses terminology incompatible with ISO 42010:2022. Note also that the latter is not based on either version of ISO 42010, and its terminology also conflicts with that of the standard.
+</p>

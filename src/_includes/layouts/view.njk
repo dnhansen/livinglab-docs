@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+<h1>{{ title }}</h1>
+
+<h2>Stakeholder concerns</h2>
+{{ stakeholderConcerns }}
+
+<h2>Model</h2>
+<div>
+    <object
+    class="toggle"
+    data="/assets/{{ model.path }}-light.svg"
+    data-light="{{ '/assets/' | url }}{{ model.path }}-light.svg"
+    data-dark="{{ '/assets/' | url }}{{ model.path }}-dark.svg"></object>
+</div>
+<p class="presentation-key">Model kind: {{ model.modelKind }}</p>
+<p>Source: {% cite model.source.id %}, p. {{ model.source.page }}</p>
+
+<h2>Elements</h2>
+{% for element in elements %}
+<div class="catalogue-element-container">
+    <h3 class="catalogue-element">{{ element.title }}</h3>
+    {{ element.content | markdownify | safe }}
+</div>
+{% endfor %}

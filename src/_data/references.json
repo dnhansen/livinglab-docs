@@ -1,0 +1,24 @@
+[
+  {
+    "id": "clements-views-and-beyond",
+    "type": "book",
+    "title": "Documenting Software Architectures: Views and Beyond",
+    "author": "Clements, et al.",
+    "edition": "2nd",
+    "publisher": "Addison-Wesley",
+    "pages": "xxxix + 537",
+    "isbn": "0-321-55268-7",
+    "year": 2011
+  },
+  {
+    "id": "rozanski-woods",
+    "type": "book",
+    "title": "Software Systems Architecture",
+    "author": "Rozanski, Woods",
+    "edition": "2nd",
+    "publisher": "Addison-Wesley",
+    "pages": "xx + 678",
+    "isbn": "0-321-71833-X",
+    "year": 2012
+  }
+]

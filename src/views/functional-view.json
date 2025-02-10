@@ -1,10 +1,15 @@
 {
-    "title": "Top-level C&C view",
-    "presentation": {
-        "type": "image/svg+xml",
-        "path": "cnc",
-        "key": "UML (component diagram)"
-    },
+    "title": "Functional view",
+    "stakeholderConcerns": "TODO",
+    "components": [
+        {
+            "title": "Functional elements",
+            "modelGoverned": true,
+            "path": "cnc",
+            "modelKind": "UML component diagram",
+            "source": "Views and Beyond"
+        }
+    ],
     "elements": [
         {
             "title": "Web browser",

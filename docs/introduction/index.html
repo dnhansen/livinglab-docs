@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/livinglab-docs/scripts/script.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/livinglab-docs/css/base.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/view.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/references.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
+    <title>Introduction</title>
+</head>
+<body>
+    <header>
+        <a href="/livinglab-docs/">QGG LivingLab</a>
+        <span>
+            Theme:
+            <select class="theme-selector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </span>
+    </header>
+    <div class="content-wrapper">
+    <nav class="sidebar">
+        <h2 class="sidebar-header">Contents</h2>
+        <ol>
+            <li><a href="/livinglab-docs/introduction/">Introduction</a></li>
+            <li><a href=".">Stakeholders</a></li>
+            <li>Architectural views
+                <ol>
+                    <li>Context</li>
+                    <li>Functional
+                        <ul>
+                            <li><a href="/livinglab-docs/views/functional/functional-structure/">Functional structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Information</li>
+                    <li>Concurrency</li>
+                    <li>Development
+                        <ul>
+                            <li><a href="/livinglab-docs/views/development/module-structure/">Module structure</a></li>
+                        </ul>
+                    </li>
+                    <li>Deployment
+                        <ul>
+                            <li><a href="/livinglab-docs/views/deployment/runtime-platform/">Runtime platform</a></li>
+                        </ul>
+                    </li>
+                    <li>Operational</li>
+                </ol>
+            </li>
+            <li><a href=".">Quality properties</a></li>
+            <li><a href=".">Glossary</a></li>
+            <li><a href="/livinglab-docs/references/">References</a></li>
+        </ol>
+      </nav>
+    <main>
+        
+<h1>Introduction</h1>
+
+<h2>Entity of interest</h2>
+<p>TODO</p>
+
+<h2>Purpose, scope, audience</h2>
+<p>TODO</p>
+
+<h2>Identifying information</h2>
+<p>This architecture description is authored by Danny Nygård Hansen (dnh@qgg.au.dk) at the Center for Quantitative Genetics and Genomics at Aarhus University.</p>
+
+<h2>Documentation status</h2>
+<p>Under development</p>
+
+<h2>Architectural design approach</h2>
+<p>
+    This architecture description (AD) is informed by the principles outlined in DS/ISO/IEC/IEEE 42010:2022 (ISO 42010:2022)(TODO ref) (in particular clause 6), the international standard for architecture descriptions of systems and software. While this AD leverages ISO 42010 as a guiding framework, the authors make no claims that it is compliant with all aspects of the standard.
+</p>
+<p>
+    The viewpoints used in this AD are drawn from the comprehensive set defined by Rozanski and Woods <a href="/livinglab-docs/references/#rozanski-woods">[2]</a>, which is based on the 2011 version of ISO 42010(TODO ref). The viewpoints used in this AD include:
+</p>
+<ul>
+    <li>Context Viewpoint: Describes the system's external interfaces, dependencies, and interactions with its environment to provide a high-level understanding of its operational context.</li>
+    <li>Functional Viewpoint: Focuses on the system's functional structure, detailing the responsibilities of major components and their interactions to fulfill required capabilities.</li>
+    <li>Information Viewpoint: Examines the system's key data structures, their relationships, and the flow of information within and between components.</li>
+    <li>Concurrency Viewpoint: Addresses the system's runtime behavior, including threading, processes, and mechanisms for coordination and synchronization.</li>
+    <li>Development Viewpoint: Highlights the system's construction, including module organization, development tools, and build processes, to support the needs of developers.</li>
+    <li>Deployment Viewpoint: Details the mapping of software artifacts to hardware infrastructure, capturing the operational environment and deployment strategies.</li>
+    <li>Operational Viewpoint: Focuses on the system's ongoing management, monitoring, and operational processes to ensure stability and performance.</li>
+</ul>
+<p>
+    No claims are made that the specifications of these viewpoints found in <a href="/livinglab-docs/references/#rozanski-woods">[2]</a> are compliant with either version of ISO 42010.
+</p>
+<p>
+    Many of the architecture view components used in this AD, as well as their specifications, are adapted from <a href="/livinglab-docs/references/#rozanski-woods">[2]</a> and <a href="/livinglab-docs/references/#clements-views-and-beyond">[1]</a>. Note that the former, being based on ISO 42010:2011, uses terminology incompatible with ISO 42010:2022. Note also that the latter is not based on either version of ISO 42010, and its terminology also conflicts with that of the standard.
+</p>
+    </main>
+    </div>
+    <footer>
+        QGG Aarhus University
+    </footer>
+    <script>
+  // Get the current page's URL path
+  const currentPath = window.location.pathname;
+
+  // Find all sidebar links
+  const links = document.querySelectorAll('nav a');
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || href + 'index.html' === currentPath) {
+      link.classList.add('current');
+    }
+  });
+</script>
+</body>
+</html>
