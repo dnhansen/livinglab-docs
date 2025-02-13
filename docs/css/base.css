@@ -237,9 +237,13 @@ button {
 }
 
 .chevron {
-    transition: transform 0.3s ease;
+    transition: none;
 }
 
 .chevron.open {
     transform: rotate(90deg);
+}
+
+body.loaded .chevron {
+    transition: transform 0.3s ease;
 }

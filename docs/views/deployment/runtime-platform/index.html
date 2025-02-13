@@ -198,6 +198,13 @@
             chevron.classList.toggle("open");
         });
     });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+  document.body.classList.add("loaded");
+  }, 10);
+});
 </script>
 </body>
 </html>
