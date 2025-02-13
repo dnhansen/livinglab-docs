@@ -48,10 +48,10 @@
 - Support multiple theme selectors in script.
 - Understand the "color-scheme" property of :root.
 - "color-scheme: dark" gives SVGs a white background. Fix this.
-- New sidebar: Drop-down should be highlighted when collapsed, and the current page is one in its submenu.
 - New sidebar: Dark mode.
 
 FIXED
 - Sometimes the localStorage doesn't update when clicking the button. It seems like this happens when: On either index or views page (anything that is not a particular view page), and this page was accessed when in dark mode. If one of these pages is accessed in light mode, then everything works fine. Refreshing doesn't fix it. -- FIX: Bug in script.js which used querySelector instead of querySelectorAll, yielding null when there are no images, throwing an error.
 - Fix flashing when dark mode, changing pages. -- FIX: Seemed to have gone away on its own? If it returns, don't use AJAX, that's too complex.
 - New sidebar: Chevron rotates when loading page where it is facing down, fix so that it immediately points down.
+- New sidebar: Drop-down should be highlighted when collapsed, and the current page is one in its submenu.

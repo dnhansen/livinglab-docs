@@ -185,6 +185,10 @@
 
             const chevron = expandable.parentNode.querySelector(".chevron");
             chevron.classList.add('open');
+
+            const expander = expandable.parentNode.querySelector(".sidebar-expander");
+            expander.classList.add("current");
+            expander.classList.add("open");
         }
     }
   });
@@ -199,6 +203,7 @@
             
             const chevron = this.querySelector(".chevron");
             chevron.classList.toggle("open");
+            this.classList.toggle("open");
         });
     });
 
