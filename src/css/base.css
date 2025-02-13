@@ -112,8 +112,12 @@ header, footer {
     color: var(--header-text-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
+h1, h2, h3 {
+    font-weight:600;
+}
+
+h1 {
+    font-size: 200%;
 }
 
 :is(header, .sidebar) a {
@@ -180,7 +184,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100%);
+    width: 100%;
 }
 
 

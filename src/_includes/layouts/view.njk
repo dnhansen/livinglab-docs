@@ -2,12 +2,13 @@
 layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
+<p class="view-description">{{ description }}</p>
 
-<h2>Stakeholder concerns</h2>
-{{ stakeholderConcerns }}
+{# <h2>Stakeholder concerns</h2>
+{{ stakeholderConcerns }} #}
 
 <h2>Model</h2>
-<div>
+<div class="diagram-container">
     <object
     class="toggle"
     data="/assets/{{ model.path }}-light.svg"

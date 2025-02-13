@@ -1,5 +1,7 @@
 ---
 title: "Runtime platform"
+description: |
+  This view describes the processing nodes on which software elements are deployed, runtime containers, client nodes, and the basic network connections between nodes.
 stakeholderConcerns: "TODO"
 model:
   path: "runtime-platform"

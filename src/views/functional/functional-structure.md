@@ -1,5 +1,7 @@
 ---
 title: "Functional structure"
+description: |
+  This view models the runtime elements of the system, their exposed interfaces, and connectors between them. Each element has a set of well-defined responsibilities.
 stakeholderConcerns: "TODO"
 model:
   path: "cnc"

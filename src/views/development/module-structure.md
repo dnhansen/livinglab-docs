@@ -1,5 +1,7 @@
 ---
 title: "Module structure"
+description: |
+  This view describes the system's source code modules, as well as their dependencies and hierarchy.
 stakeholderConcerns: "TODO"
 model:
   path: "layers"
