@@ -212,15 +212,15 @@ button {
     border-bottom-right-radius: 3px;
 }
 
+.current:not(.open) {
+    background-color: rgb(207,232,253);
+    border-left: solid 3px rgb(0,105,194);
+}
+
 :is(.sidebar-expander, .sidebar-link):hover {
     background-color: rgb(160, 203, 239);
     border-left: solid 3px rgb(0,105,194);
     cursor: pointer;
-}
-
-.current:not(.open) {
-    background-color: rgb(207,232,253);
-    border-left: solid 3px rgb(0,105,194);
 }
 
 .sidebar a:hover {
