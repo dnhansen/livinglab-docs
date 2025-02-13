@@ -22,36 +22,103 @@
     </header>
     <div class="content-wrapper">
     <nav class="sidebar">
-        <h2 class="sidebar-header">Contents</h2>
-        <ol>
-            <li><a href="/livinglab-docs/introduction/">Introduction</a></li>
-            <li><a href=".">Stakeholders</a></li>
-            <li>Architectural views
+        <h2 class="sidebar-header">Architecture description</h2>
+        <ol class="sidebar-list-outer">
+            <li><span class="sidebar-category">Frontmatter</span>
                 <ol>
-                    <li>Context</li>
-                    <li>Functional
-                        <ul>
-                            <li><a href="/livinglab-docs/views/functional/functional-structure/">Functional structure</a></li>
-                        </ul>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/introduction/">Introduction</a>
                     </li>
-                    <li>Information</li>
-                    <li>Concurrency</li>
-                    <li>Development
-                        <ul>
-                            <li><a href="/livinglab-docs/views/development/module-structure/">Module structure</a></li>
-                        </ul>
+                    <li class="sidebar-link">
+                        <a href=".">Stakeholders</a>
                     </li>
-                    <li>Deployment
-                        <ul>
-                            <li><a href="/livinglab-docs/views/deployment/runtime-platform/">Runtime platform</a></li>
-                        </ul>
+                    <li class="sidebar-link">
+                        <a href=".">Quality properties</a>
                     </li>
-                    <li>Operational</li>
                 </ol>
             </li>
-            <li><a href=".">Quality properties</a></li>
-            <li><a href=".">Glossary</a></li>
-            <li><a href="/livinglab-docs/references/">References</a></li>
+            <li><span class="sidebar-category">Architectural views</span>
+                <ol>
+                    <li class="sidebar-link">
+                        <a href=".">Context model</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/views/functional/functional-structure/">Functional structure</a>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Information views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href=".">Static information structure</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href=".">Information flow</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href=".">Concurrency model</a>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Development views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/development/module-structure/">Module structure</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href=".">Codeline organisation</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Deployment views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/deployment/runtime-platform/">Runtime platform</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href=".">Network model</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Operational views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href=".">Installation</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href=".">Migration</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href=".">Administration</a>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><span class="sidebar-category">Backmatter</span>
+                <ol>
+                    <li class="sidebar-link">
+                        <a href=".">Glossary</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/references/">References</a>
+                    </li>
+                </ol>
+            </li>
         </ol>
       </nav>
     <main>
@@ -65,6 +132,7 @@
         QGG Aarhus University
     </footer>
     <script>
+
   // Get the current page's URL path
   const currentPath = window.location.pathname;
 
@@ -74,9 +142,32 @@
   links.forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath || href + 'index.html' === currentPath) {
-      link.classList.add('current');
+        const linkContainer = link.parentNode;
+        linkContainer.classList.add('current');
+        
+        const linkIsNested = linkContainer.parentNode.classList.contains("sidebar-expandable");
+        if (linkIsNested) {
+            const expandable = linkContainer.parentNode;
+            expandable.style.display = "block";
+
+            const chevron = expandable.parentNode.querySelector(".chevron");
+            chevron.classList.add('open');
+        }
     }
   });
+
+  
+  // Add toggle to buttons in sidebar
+  document.querySelectorAll(".sidebar-expander").forEach(btn => {
+        btn.addEventListener("click", function() {
+            const expandable = this.parentNode.querySelector(".sidebar-expandable");
+            const isHidden = window.getComputedStyle(expandable).display === "none";
+            expandable.style.display = isHidden ? "block" : "none";
+            
+            const chevron = this.querySelector(".chevron");
+            chevron.classList.toggle("open");
+        });
+    });
 </script>
 </body>
 </html>

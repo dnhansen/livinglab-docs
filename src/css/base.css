@@ -113,7 +113,7 @@ header, footer {
 }
 
 .sidebar {
-    font-size: 80%;
+    /* font-size: 80%; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -158,13 +158,6 @@ main a:hover {
 } */
 
 
-
-.sidebar a.current {
-    font-weight: bold;
-    font-style: italic;
-}
-
-
 /* Link decoration */
 
 a[href*="//"]::after {
@@ -174,14 +167,79 @@ a[href*="//"]::after {
 
 /* Sidebar list */
 
+button {
+    all: unset;
+}
+
+.sidebar-list-outer {
+    width: calc(100% - 16px);
+}
+
 .sidebar ol {
-    list-style-type: disc;
+    list-style: none;
+    padding-left: 0;
 }
 
-.sidebar ol ol {
-    list-style-type: decimal;
+.sidebar-expander {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100%);
 }
 
-.sidebar ol ol ol {
-    list-style-type: lower-alpha;
+
+.sidebar-expandable {
+    display: none;
+}
+
+.sidebar a {
+    width: 100%;
+    display: block;
+}
+
+.sidebar-expander, .sidebar-expandable a {
+    box-sizing: border-box;
+}
+
+.sidebar-expandable a {
+    padding-left: 16px;
+}
+
+.sidebar-expander, .sidebar-link {
+    padding: 2px 6px;
+    border-left: solid 3px transparent;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+:is(.sidebar-expander, .sidebar-link):hover {
+    background-color: rgb(160, 203, 239);
+    border-left: solid 3px rgb(0,105,194);
+    cursor: pointer;
+}
+
+.current {
+    background-color: rgb(207,232,253);
+    border-left: solid 3px rgb(0,105,194);
+}
+
+.sidebar a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-category {
+    font-weight: bold;
+    font-size: 80%;
+    text-transform: uppercase;
+    margin-top: 10px;
+    display: block;
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+}
+
+.chevron.open {
+    transform: rotate(90deg);
 }
