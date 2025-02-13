@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/livinglab-docs/css/view.css">
     <link rel="stylesheet" href="/livinglab-docs/css/references.css">
     <link rel="stylesheet" href="/livinglab-docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
-    <title>Functional structure</title>
+    <title>Quality properties</title>
 </head>
 <body>
     <header>
@@ -122,50 +122,10 @@
         </ol>
       </nav>
     <main>
-        <h1>Functional structure</h1>
-<p class="view-description">This view models the runtime elements of the system, their exposed interfaces, and connectors between them. Each element has a set of well-defined responsibilities.
-</p>
+        
+<h1>Quality properties</h1>
 
-
-
-<h2>Model</h2>
-<div class="diagram-container">
-    <object class="toggle" data="/livinglab-docs/assets/cnc-light.svg" data-light="/livinglab-docs/assets/cnc-light.svg" data-dark="/livinglab-docs/assets/cnc-dark.svg"></object>
-</div>
-<p class="presentation-key">Model kind: UML component diagram</p>
-<p>Source: <a href="/livinglab-docs/references/#rozanski-woods">[2]</a>, p. 271</p>
-
-<h2>Elements</h2>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Web browser</h3>
-    <p>This component represents the user's web browser. The web browser sends HTTP request to the reverse proxy to request static pages for rendering the web application.</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Web application</h3>
-    <p>This component represents the web application running in the user's browser, and is hence nested inside the browser component. The web application sends API requests to the reverse proxy.</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Reverse proxy</h3>
-    <p>The reverse proxy has two interfaces, one which serves static pages when queried, and one which handles API requests. When queried on the latter interface, the request is simply forwarded to the back-end.</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Back-end</h3>
-    <p>TODO</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Database</h3>
-    <p>TODO</p>
-
-</div>
+<p>TODO</p>
 
     </main>
     </div>
