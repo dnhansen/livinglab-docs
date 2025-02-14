@@ -2,16 +2,18 @@
 
 
 :root {
-    --content-width: 800px;
-    --sidebar-width: 300px;
-    --sidebar-gap: 20px;
+    --content-width: 600px;
+    --sidebar-width: 240px;
+    --sidebar-gap: 30px;
 
-    --main-font: "Source Sans 3";
+    --body-font: "Source Sans 3";
+    --header-font: var(--body-font);
+    --sidebar-font: var(--body-font);
 
     --background-color: rgb(255,255,255);
     --text-color: rgb(0,0,0);
     --header-text-color: rgb(68,68,68);
-    --link-color: rgb(0, 114, 170);
+    --link-color: rgb(0,105,194);
     --border-color: rgb(222,222,222);
 
     --button-background-color: rgb(233,233,237);
@@ -45,6 +47,7 @@ header {
     grid-template-columns: var(--sidebar-width) var(--content-width);
     flex: 1;
     gap: var(--sidebar-gap);
+    justify-content: center;
 }
 
 footer {
@@ -72,10 +75,6 @@ header, footer {
     padding: 0.5em 10px;
 }
 
-.sidebar {
-    padding-left: 10px;
-}
-
 header {
     border-bottom: solid 0.8px var(--border-color);
 }
@@ -84,8 +83,15 @@ footer {
     border-top: solid 0.8px var(--border-color);
 }
 
-h1, .sidebar-header {
+h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 ol, ul {
@@ -100,7 +106,11 @@ html {
 }
 
 body {
-    font-family: var(--main-font);
+    font-family: var(--body-font);
+}
+
+.sidebar {
+    font-family: var(--sidebar-font);
 }
 
 .content-wrapper {
@@ -110,6 +120,7 @@ body {
 header, footer {
     font-size: 90%;
     color: var(--header-text-color);
+    font-family: var(--header-font);
 }
 
 h1, h2, h3 {
@@ -118,6 +129,10 @@ h1, h2, h3 {
 
 h1 {
     font-size: 200%;
+}
+
+h2 {
+    border-bottom: solid 1px var(--border-color);
 }
 
 :is(header, .sidebar) a {
@@ -173,6 +188,7 @@ button {
 
 .sidebar-list-outer {
     width: calc(100% - 16px);
+    margin: 0;
 }
 
 .sidebar ol {
@@ -232,8 +248,11 @@ button {
     font-weight: bold;
     font-size: 80%;
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 16px;
+    margin-bottom: 3px;
+    padding-left: 9px;
     display: block;
+    color: #6f6f6f;
 }
 
 .chevron {

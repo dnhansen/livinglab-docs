@@ -1,7 +1,7 @@
 ---
 title: "Codeline organisation"
 description: |
-  Description
+  This view describes issues of source code structure, configuration management, testing, and continuous integration and delivery.
 stakeholderConcerns: "TODO"
 model:
   path: ""

@@ -1,7 +1,7 @@
 ---
 title: "Migration"
 description: |
-  Description
+  This view describes the general strategies used to migrate the system from one production environment to another, if needed.
 stakeholderConcerns: "TODO"
 model:
   path: ""

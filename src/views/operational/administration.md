@@ -1,7 +1,7 @@
 ---
 title: "Administration"
 description: |
-  Description
+  This view describes the facilities needed to monitor and control the system while it is running.
 stakeholderConcerns: "TODO"
 model:
   path: ""

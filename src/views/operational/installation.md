@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 description: |
-  Description
+  This view describes the software elements that need to be installed to move the system into production.
 stakeholderConcerns: "TODO"
 model:
   path: ""

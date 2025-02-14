@@ -1,7 +1,7 @@
 ---
 title: "Network model"
 description: |
-  Description
+  This view describes the general structure of the processing nodes, other network nodes, and network connections of the system.
 stakeholderConcerns: "TODO"
 model:
   path: ""

@@ -1,7 +1,7 @@
 ---
 title: "Static information structure"
 description: |
-  Description
+  This view identifies the most important data entities of the system, as well as the relationships between these entities.
 stakeholderConcerns: "TODO"
 model:
   path: ""
