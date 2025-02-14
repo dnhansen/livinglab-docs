@@ -4,7 +4,7 @@ description: |
   This view models the runtime elements of the system, their exposed interfaces, and connectors between them.
 stakeholderConcerns: "TODO"
 model:
-  path: "cnc"
+  path: "functional-structure"
   modelKind: "UML component diagram"
   source:
     id: "rozanski-woods"
