@@ -10,17 +10,18 @@ model:
     id: "rozanski-woods"
     page: 271
 elements:
-  - title: "Web browser"
+  - title: "Front-end"
     content: |
-      This component represents the user's web browser. The web browser sends HTTP request to the reverse proxy to request static pages for rendering the web application.
-  - title: "Web application"
-    content: |
-      This component represents the web application running in the user's browser, and is hence nested inside the browser component. The web application sends API requests to the reverse proxy.
-  - title: "Reverse proxy"
-    content: "The reverse proxy has two interfaces, one which serves static pages when queried, and one which handles API requests. When queried on the latter interface, the request is simply forwarded to the back-end."
+      This component represents the front-end application running in the user's web browser. This is responsible for serving a graphical interface to the user, enabling the user to perform the actions permitted by the back-end. It is also responsible for sending requests to the back-end through a REST API.
   - title: "Back-end"
-    content: "TODO"
-  - title: "Database"
-    content: "TODO"
+    content: |
+      This component represents the back-end application. This exposes a REST API, through which consumers can perform permitted actions. It is composed of the following parts:
+
+      - Middleware pipeline: This is responsible for authentication and authorisation, logging, error handling, and routing and endpoint selection.
+      - Business logic: This part is responsible for handling incoming requests and forming responses.
+      - Database service: This is responsible for communicating with the database management system, including object-relational mapping.
+  - title: "Database management system"
+    content: |
+      This component is responsible for handling database access. TODO details
 layout: "layouts/view.njk"
 ---

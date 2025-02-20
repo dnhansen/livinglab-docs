@@ -102,10 +102,22 @@ p {
     line-height: 1.4;
 }
 
-ol, ul {
-    padding-left: 2em;
+ol, ul, dl {
     line-height: 1.4;
 }
+
+ol, ul {
+    padding-left: 2em;
+}
+
+main :is(ol, ul, dl) {
+    margin: 0 0 1rem 0;
+}
+
+dd {
+    margin-left: 20px;
+}
+
 
 
 /* Colors and fonts */
@@ -207,6 +219,10 @@ pre {
     margin-right: -0.5em;
 }
 
+dt {
+    font-style: italic;
+}
+
 
 /* Link decoration */
 
@@ -237,7 +253,6 @@ button {
     align-items: center;
     width: 100%;
 }
-
 
 .sidebar-expandable {
     display: none;

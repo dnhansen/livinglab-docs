@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/livinglab-docs/css/base.css">
     <link rel="stylesheet" href="/livinglab-docs/css/view.css">
     <link rel="stylesheet" href="/livinglab-docs/css/references.css">
-    <link rel="stylesheet" href="/livinglab-docs/css/glossary.css">
     <link rel="stylesheet" href="/livinglab-docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
     <title>Runtime platform</title>
 </head>
@@ -138,26 +137,22 @@
 <p>Source: <a href="/livinglab-docs/references/#rozanski-woods">[4]</a>, p. 378</p>
 
 <h2>Elements</h2>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">User host</h3>
-    <p>This node represents users who can access the application. After the web application is served to the user by the reverse proxy, the application runs in the user's browser on the user's machine.</p>
+<dl>
+    
+    <dt>User host</dt>
+    <dd><p>This node represents users who can access the application. After the web application is served to the user by the reverse proxy, the application runs in the user's browser on the user's machine.</p>
 <p>Note that the same browser can run multiple instances of the web application, and the same machine can run multiple browsers. Multiple instances of the web application can be connected to the web server simultaneously.</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Application server</h3>
-    <p>Represents the physical server on which the reverse proxy, the static pages containing the user interface, and the back-end application are deployed.</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Database server</h3>
-    <p>This node represents the physical server on which the database management system is deployed, and where the database is stored.</p>
-
-</div>
-
+</dd>
+    
+    <dt>Application server</dt>
+    <dd><p>Represents the physical server on which the reverse proxy, the static pages containing the user interface, and the back-end application are deployed.</p>
+</dd>
+    
+    <dt>Database server</dt>
+    <dd><p>This node represents the physical server on which the database management system is deployed, and where the database is stored.</p>
+</dd>
+    
+</dl>
 
 
 

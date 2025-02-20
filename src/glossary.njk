@@ -4,9 +4,9 @@ title: Glossary
 ---
 
 <h1>{{title}}</h1>
-{% for entry in collections.glossary %}
 <dl>
+{% for entry in collections.glossary %}
     <dt>{{ entry.term }}</dt>
     <dd>{{ entry.definition | markdownify | safe }}</dd>
-</dl>
 {% endfor %}
+</dl>

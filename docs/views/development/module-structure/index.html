@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/livinglab-docs/css/base.css">
     <link rel="stylesheet" href="/livinglab-docs/css/view.css">
     <link rel="stylesheet" href="/livinglab-docs/css/references.css">
-    <link rel="stylesheet" href="/livinglab-docs/css/glossary.css">
     <link rel="stylesheet" href="/livinglab-docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
     <title>Module structure</title>
 </head>
@@ -138,16 +137,14 @@
 <p>Source: <a href="/livinglab-docs/references/#rozanski-woods">[4]</a>, p. 360</p>
 
 <h2>Elements</h2>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">User interface</h3>
-    <p>The web-based user interface is implemented in this module.</p>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Back-end</h3>
-    <p>The business logic and domain model are implemented in this module. It provides the following functionality:</p>
+<dl>
+    
+    <dt>User interface</dt>
+    <dd><p>The web-based user interface is implemented in this module.</p>
+</dd>
+    
+    <dt>Back-end</dt>
+    <dd><p>The business logic and domain model are implemented in this module. It provides the following functionality:</p>
 <ul>
 <li>Exposing an API to be consumed by users.</li>
 <li>Authenticating users and authorising user requests.</li>
@@ -155,15 +152,13 @@
 <li>Error handling.</li>
 <li>Caching.</li>
 </ul>
-
-</div>
-
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">Database</h3>
-    <p>The database and database management system are implemented in this layer.</p>
-
-</div>
-
+</dd>
+    
+    <dt>Database</dt>
+    <dd><p>The database and database management system are implemented in this layer.</p>
+</dd>
+    
+</dl>
 
 
 

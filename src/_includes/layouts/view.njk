@@ -20,12 +20,12 @@ layout: layouts/base.njk
 <p>Source: {% cite model.source.id %}, p. {{ model.source.page }}</p>
 
 <h2>Elements</h2>
-{% for element in elements %}
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">{{ element.title }}</h3>
-    {{ element.content | markdownify | safe }}
-</div>
-{% endfor %}
+<dl>
+    {% for element in elements %}
+    <dt>{{ element.title }}</dt>
+    <dd>{{ element.content | markdownify | safe }}</dd>
+    {% endfor %}
+</dl>
 {% endif %}
 
 {% for section in sections %}
