@@ -12,9 +12,11 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/scripts/*");
     eleventyConfig.addPassthroughCopy("src/assets/*.png");
     eleventyConfig.addPassthroughCopy("src/assets/*.svg");
+    eleventyConfig.addPassthroughCopy("src/fonts/*");
     eleventyConfig.addWatchTarget("src/css/");
     eleventyConfig.addWatchTarget("src/scripts/");
     eleventyConfig.addWatchTarget("src/assets/");
+    eleventyConfig.addWatchTarget("src/fonts/");
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
 
@@ -34,8 +36,15 @@ export default function(eleventyConfig) {
 
     const referencesPath = join('src', '_data', 'references.json');
     const references = JSON.parse(readFileSync(referencesPath, 'utf8'));
+    references.sort((a,b) => a.year - b.year).sort((a,b) => a.author.localeCompare(b.author));
     // Create collection of references
     eleventyConfig.addCollection('references', () => references);
+
+    const glossaryPath = join('src', '_data', 'glossary.json');
+    const glossary = JSON.parse(readFileSync(glossaryPath, 'utf8'));
+    glossary.sort((a,b) => a.term.localeCompare(b.term));
+    // Create collection of references
+    eleventyConfig.addCollection('glossary', () => glossary);
 
     eleventyConfig.addShortcode('cite', (refId) => {
         const index = references.findIndex((ref) => ref.id === refId);

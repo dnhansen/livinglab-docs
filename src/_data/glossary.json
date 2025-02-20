@@ -1,0 +1,18 @@
+[
+    {
+        "term": "mainline",
+        "definition": "The codeline or branch that acts as the current state of the product. Usually called `main` or `master`."
+    },
+    {
+        "term": "codeline",
+        "definition": "A sequence of versions of a codebase, often in the form of commits to a version control system."
+    },
+    {
+        "term": "branch",
+        "definition": "In Git: A movable pointer to a commit. Can also be synonymous with codeline."
+    },
+    {
+        "term": "healthy",
+        "definition": "A codebase or branch is healthy if it builds successfully with few, if any, bugs."
+    }
+]

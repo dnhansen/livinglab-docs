@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/livinglab-docs/css/base.css">
     <link rel="stylesheet" href="/livinglab-docs/css/view.css">
     <link rel="stylesheet" href="/livinglab-docs/css/references.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/glossary.css">
     <link rel="stylesheet" href="/livinglab-docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
     <title>Codeline organisation</title>
 </head>
@@ -133,18 +134,18 @@
 
 <h2>Directory structure</h2>
 <p>The back-end codebase should have the following rough directory structure:</p>
-<pre><code>livinglab-backend
+<pre><code>livinglab-backend/
 ├── LivingLab.sln
-├── src
-│   └── LivingLab
+├── src/
+│   └── LivingLab/
 │       ├── appsettings.Development.json
 │       ├── appsettings.json
 │       ├── LivingLab.csproj
 │       ├── Program.cs
 │       ├── Service1.cs
 │       └── Service2.cs
-└── test
-    └── LivingLab.Tests
+└── test/
+    └── LivingLab.Tests/
         ├── LivingLab.Tests.csproj
         ├── Test1.cs
         └── Test2.cs
@@ -157,7 +158,8 @@
 
 
 <h2>Configuration management</h2>
-<p>TODO</p>
+<p>The project shall use Git for version control. Developers shall strive to integrate changes to the mainline branch as soon as their code is healthy (that is, they shall perform continuous integration, cf. TODO cite fowler-ci). Additional branches are allowed in personal workspaces of developers, as long as these are continuously merged with the mainline branch. Note that semi-integration, i.e., developers regularly pulling changes from mainline, is not sufficient, cf. TODO cite fowler-ci.</p>
+<p>TODO hiding work-in-progress</p>
 
 
 <h2>Continuous integration and delivery</h2>

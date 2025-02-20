@@ -1,3 +1,15 @@
 .book {
     font-style: italic;
 }
+
+.webpage {
+    quotes: "‘" "’";
+}
+
+.webpage::before {
+    content: open-quote;
+}
+
+.webpage::after {
+    content: close-quote;
+}

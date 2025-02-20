@@ -1,18 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+@font-face {
+    font-family: "Fira Code";
+    src: url("../fonts/FiraCode-VariableFont.ttf") format("truetype");
+    font-weight: 300 700;
+    font-style: normal;
+}
 
 :root {
     --content-width: 600px;
     --sidebar-width: 240px;
     --sidebar-gap: 30px;
 
-    --body-font: "Source Sans 3";
-    --header-font: var(--body-font);
-    --sidebar-font: var(--body-font);
-    --code-font: "Source Code Pro";
+    --body-font: "Crimson Pro";
+    --header-font: "Source Sans 3";
+    --sidebar-font: var(--header-font);
+    --code-font: "Fira Code";
 
     --background-color: rgb(255,255,255);
-    --text-color: rgb(0,0,0);
+    --text-color: #222;
     --header-text-color: rgb(68,68,68);
     --link-color: rgb(0,105,194);
     --border-color: rgb(222,222,222);
@@ -92,11 +99,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 ol, ul {
     padding-left: 2em;
+    line-height: 1.4;
 }
 
 
@@ -122,6 +130,10 @@ header, footer {
     font-size: 90%;
     color: var(--header-text-color);
     font-family: var(--header-font);
+}
+
+main {
+    font-size: 18px;
 }
 
 h1, h2, h3 {
@@ -175,14 +187,24 @@ main a:hover {
 
 code {
     font-family: var(--code-font);
+    font-size: 14px;
+    color: #717170;
 }
 
 :not(pre) > code {
     padding: .1em .2em;
     margin: 0;
     white-space: break-spaces;
-    background-color: #e6e6e6;
+    background-color: #faf8f5;
     border-radius: 3px;
+}
+
+pre {
+    background-color: #faf8f5;
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
 }
 
 

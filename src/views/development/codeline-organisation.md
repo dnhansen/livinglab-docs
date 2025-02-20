@@ -8,18 +8,18 @@ sections:
     content: |
       The back-end codebase should have the following rough directory structure:
 
-          livinglab-backend
+          livinglab-backend/
           ├── LivingLab.sln
-          ├── src
-          │   └── LivingLab
+          ├── src/
+          │   └── LivingLab/
           │       ├── appsettings.Development.json
           │       ├── appsettings.json
           │       ├── LivingLab.csproj
           │       ├── Program.cs
           │       ├── Service1.cs
           │       └── Service2.cs
-          └── test
-              └── LivingLab.Tests
+          └── test/
+              └── LivingLab.Tests/
                   ├── LivingLab.Tests.csproj
                   ├── Test1.cs
                   └── Test2.cs
@@ -28,7 +28,10 @@ sections:
   - title: Testing
     content: TODO
   - title: Configuration management
-    content: TODO
+    content: |
+      The project shall use Git for version control. Developers shall strive to integrate changes to the mainline branch as soon as their code is healthy (that is, they shall perform continuous integration, cf. TODO cite fowler-ci). Additional branches are allowed in personal workspaces of developers, as long as these are continuously merged with the mainline branch. Note that semi-integration, i.e., developers regularly pulling changes from mainline, is not sufficient, cf. TODO cite fowler-ci.
+
+      TODO hiding work-in-progress
   - title: Continuous integration and delivery
     content: TODO
 layout: "layouts/view.njk"

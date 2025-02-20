@@ -7,7 +7,12 @@ title: References
 <ol>
   {% for ref in collections.references %}
     <li id="{{ ref.id }}">
-      {{ ref.author }} ({{ ref.year }}). <span class="{{ ref.type }}">{{ ref.title }}</span>. {{ ref.edition }} edition. {{ ref.publisher }}. {{ ref.pages }} pp. ISBN: {{ ref.isbn }}.
+      {% if (ref.type == "book") %}
+        {{ ref.author }} ({{ ref.year }}). <span class="{{ ref.type }}">{{ ref.title }}</span>. {{ ref.edition }} edition. {{ ref.publisher }}. {{ ref.pages }} pp. ISBN: {{ ref.isbn }}.
+      {% endif %}
+      {% if (ref.type == "webpage") %}
+        {{ ref.author }} ({{ ref.year }}). <a href="{{ ref.url }}"><span class="{{ ref.type }}">{{ ref.title }}</span></a>.
+      {% endif %}
     </li>
   {% endfor %}
 </ol>
