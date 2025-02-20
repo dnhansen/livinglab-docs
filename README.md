@@ -18,7 +18,8 @@ To install all dependencies, run the command
 
 The `package.json` file defines the following scripts:
 
-- `build`: Builds the project.
+- `clean`: Removes output directory `docs`.
+- `build`: Cleans and builds the project. Files are output to the `docs` directory.
 - `watch`: As `build`, but also listens for changes in the source directories and automatically builds on changes.
 - `start`: As `watch`, but also starts a local web server which listens at `localhost:8080`. The site is served at the path `/livinglab-docs`.
 
@@ -27,6 +28,10 @@ To run these scripts, use the command
     npm run <script>
 
 [Note that `start` can also be run using the command `npm start`.](https://docs.npmjs.com/cli/v11/commands/npm-start)
+
+### Delete orphaned files
+
+When running the `watch` or `start` scripts, note that the `docs` directory is only deleted when the script is started. Hence if source files are created and then deleted, there may be orphaned output files in the `docs` directory. Make sure to delete these, either manually or by running the `build` script.
 
 ### Visual Studio Code Live Server
 
@@ -45,7 +50,7 @@ This project is hosted at [`dnhansen.github.io/livinglab-docs`](https://dnhansen
 
 ### UML diagram rendering
 
-The UML diagrams are drawn using [draw.io](https://www.drawio.com/) and saved as DRAWIO files (with extension `.drawio`). The application expects these to be rendered as PNG files.
+The UML diagrams are drawn using [draw.io](https://www.drawio.com/) and saved as DRAWIO files (with extension `.drawio`). The application expects these to be exported and rendered as SVG files, one each for light and dark mode.
 
 TODO how to do this + write about it above in development.
 
@@ -55,3 +60,11 @@ TODO how to do this + write about it above in development.
 ### Eleventy server
 
 If the development server provided by Eleventy experiences issues, consider using a different server such as [VS Code Live Server](#visual-studio-code-live-server).
+
+### Problem writing Eleventy templates
+
+When running the `watch` or `start` scripts, an error like
+
+    Problem writing Eleventy templates
+
+might occur. This happens if output files in the `docs` directory have been deleted while either script is running. To solve this problem, simply restart the script.
