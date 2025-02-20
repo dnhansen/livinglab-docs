@@ -128,20 +128,41 @@
 
 
 
-<h2>Model</h2>
-<div class="diagram-container">
-    <object class="toggle" data="/livinglab-docs/assets/-light.svg" data-light="/livinglab-docs/assets/-light.svg" data-dark="/livinglab-docs/assets/-dark.svg"></object>
-</div>
-<p class="presentation-key">Model kind: TODO</p>
-<p>Source: [?], p. TODO</p>
 
-<h2>Elements</h2>
 
-<div class="catalogue-element-container">
-    <h3 class="catalogue-element">TODO</h3>
-    <p>TODO</p>
 
-</div>
+<h2>Directory structure</h2>
+<p>The back-end codebase should have the following rough directory structure:</p>
+<pre><code>livinglab-backend
+├── LivingLab.sln
+├── src
+│   └── LivingLab
+│       ├── appsettings.Development.json
+│       ├── appsettings.json
+│       ├── LivingLab.csproj
+│       ├── Program.cs
+│       ├── Service1.cs
+│       └── Service2.cs
+└── test
+    └── LivingLab.Tests
+        ├── LivingLab.Tests.csproj
+        ├── Test1.cs
+        └── Test2.cs
+</code></pre>
+<p>The directories <code>LivingLab</code> and <code>LivingLab.Tests</code> contain .NET projects, and the solution file <code>LivingLab.sln</code> should reference both projects.</p>
+
+
+<h2>Testing</h2>
+<p>TODO</p>
+
+
+<h2>Configuration management</h2>
+<p>TODO</p>
+
+
+<h2>Continuous integration and delivery</h2>
+<p>TODO</p>
+
 
     </main>
     </div>

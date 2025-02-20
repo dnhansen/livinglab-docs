@@ -7,6 +7,7 @@ layout: layouts/base.njk
 {# <h2>Stakeholder concerns</h2>
 {{ stakeholderConcerns }} #}
 
+{% if model %}
 <h2>Model</h2>
 <div class="diagram-container">
     <object
@@ -24,4 +25,10 @@ layout: layouts/base.njk
     <h3 class="catalogue-element">{{ element.title }}</h3>
     {{ element.content | markdownify | safe }}
 </div>
+{% endfor %}
+{% endif %}
+
+{% for section in sections %}
+<h2>{{ section.title }}</h2>
+{{ section.content | markdownify | safe }}
 {% endfor %}

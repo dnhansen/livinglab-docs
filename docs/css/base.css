@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
     --content-width: 600px;
@@ -9,6 +9,7 @@
     --body-font: "Source Sans 3";
     --header-font: var(--body-font);
     --sidebar-font: var(--body-font);
+    --code-font: "Source Code Pro";
 
     --background-color: rgb(255,255,255);
     --text-color: rgb(0,0,0);
@@ -171,6 +172,18 @@ main a:hover {
     text-decoration: none;
     color: rgb(6, 6, 6);
 } */
+
+code {
+    font-family: var(--code-font);
+}
+
+:not(pre) > code {
+    padding: .1em .2em;
+    margin: 0;
+    white-space: break-spaces;
+    background-color: #e6e6e6;
+    border-radius: 3px;
+}
 
 
 /* Link decoration */
