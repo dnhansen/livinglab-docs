@@ -36,5 +36,21 @@
     "author": "Fowler",
     "year": 2020,
     "url": "https://martinfowler.com/articles/branching-patterns.html"
+  },
+  {
+    "id": "iso-42010-2011",
+    "type": "standard",
+    "author": "Danish Standards",
+    "title": "Software, systems and enterprise – Architecture description",
+    "standard": "DS/ISO/IEC/IEEE 42010:2011",
+    "year": 2011
+  },
+  {
+    "id": "iso-42010-2022",
+    "type": "standard",
+    "author": "Danish Standards",
+    "title": "Software, systems and enterprise – Architecture description",
+    "standard": "DS/ISO/IEC/IEEE 42010:2022",
+    "year": 2022
   }
 ]
