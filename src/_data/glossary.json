@@ -1,11 +1,11 @@
 [
     {
         "term": "mainline",
-        "definition": "The codeline or branch that acts as the current state of the product. Usually called `main` or `master`."
+        "definition": "The codeline or branch that acts as the current state of the product. Usually called `main` or `master`. See {% cite 'fowler-branch-patterns' %} and {% cite 'fowler-ci' %}."
     },
     {
         "term": "codeline",
-        "definition": "A sequence of versions of a codebase, often in the form of commits to a version control system."
+        "definition": "A sequence of versions of a codebase, often in the form of commits to a version control system. See {% cite 'fowler-branch-patterns' %}."
     },
     {
         "term": "branch",
@@ -13,6 +13,34 @@
     },
     {
         "term": "healthy",
-        "definition": "A codebase or branch is healthy if it builds successfully with few, if any, bugs."
+        "definition": "A codebase or branch is healthy if it builds successfully with few, if any, bugs. See {% cite 'fowler-branch-patterns' %}."
+    },
+    {
+        "term": "device",
+        "definition": "When used as a UML keyword: A node representing a *physical* computational resource on which artifacts may be deployed. See {% cite 'uml-spec' %}, §19.5.7."
+    },
+    {
+        "term": "execution environment",
+        "definition": "When used as a UML keyword: A node offering an execution environment for specific types of components deployed on it as executable artifacts. See {% cite 'uml-spec' %}, §19.5.8."
+    },
+    {
+        "term": "artifact",
+        "definition": "When used as a UML keyword: A physical piece of information that is used or produced in software development, or by deployment and operation of a system. See {% cite 'uml-spec' %}, §19.5.1."
+    },
+    {
+        "term": "node",
+        "definition": "In the context of UML: A computational resource upon which artifacts may be deployed. See {% cite 'uml-spec' %}, §19.4."
+    },
+    {
+        "term": "keyword",
+        "definition": "In the context of UML: A textual annotation that serves to distinguish a particular UML concept from others sharing the same general graphical form. Keywords are always enclosed in guillemets (i.e., «keyword»). Not to be confused with UML stereotypes. See {% cite 'uml-spec' %}, annex C."
+    },
+    {
+        "term": "stereotype",
+        "definition": "In the context of UML: Defines an extension of a UML concept as part of a UML profile. When applied to UML elements, stereotypes are enclosed in guillemets (i.e., «stereotype»). Not to be confused with UML keywords. See {% cite 'uml-spec' %}, §12.3.3.4."
+    },
+    {
+        "term": "profile",
+        "definition": "In the context of UML: Extends UML with a collection of stereotypes. The standard profile specifies a set of predefined standard stereotypes. See {% cite 'uml-spec' %}, §12.3 for a description of profiles in general, and §22 for the standard profile."
     }
 ]
