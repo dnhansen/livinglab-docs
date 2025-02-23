@@ -52,5 +52,16 @@
     "title": "Software, systems and enterprise – Architecture description",
     "standard": "DS/ISO/IEC/IEEE 42010:2022",
     "year": 2022
+  },
+  {
+    "id": "uml-spec",
+    "type": "uml",
+    "title": "Unified Modeling Language",
+    "author": "Bock, et al.",
+    "institution": "Object Management Group",
+    "year": 2017,
+    "pages": "xli + 754",
+    "version": "2.5.1",
+    "url": "https://www.omg.org/spec/UML/"
   }
 ]

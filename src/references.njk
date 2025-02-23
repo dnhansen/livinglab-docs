@@ -21,6 +21,9 @@ title: References
       {% if (ref.type == "standard") %}
         {{ ref.author }} ({{ ref.year }}). <span class="{{ ref.type }}">{{ ref.standard }}: {{ ref.title }}</span>.
       {% endif %}
+      {% if (ref.type == "uml") %}
+        {{ ref.author }} ({{ ref.year }}). <a href="{{ ref.url }}"><span class="{{ ref.type }}">{{ ref.title }}</span></a>. Version {{ ref.version }}. {{ ref.institution }}. {{ ref.pages }} pp.
+      {% endif %}
     </li>
   {% endfor %}
 </ol>
