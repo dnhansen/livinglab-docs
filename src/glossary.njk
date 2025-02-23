@@ -7,6 +7,6 @@ title: Glossary
 <dl>
 {% for entry in collections.glossary %}
     <dt>{{ entry.term }}</dt>
-    <dd>{{ entry.definition | markdownify | safe }}</dd>
+    <dd>{{ entry.definition | markdownify | renderContent | safe }}</dd>
 {% endfor %}
 </dl>

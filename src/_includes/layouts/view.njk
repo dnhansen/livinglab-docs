@@ -23,12 +23,12 @@ layout: layouts/base.njk
 <dl>
     {% for element in elements %}
     <dt>{{ element.title }}</dt>
-    <dd>{{ element.content | markdownify | safe }}</dd>
+    <dd>{{ element.content | markdownify | renderContent | safe }}</dd>
     {% endfor %}
 </dl>
 {% endif %}
 
 {% for section in sections %}
 <h2>{{ section.title }}</h2>
-{{ section.content | markdownify | safe }}
+{{ section.content | markdownify | renderContent | safe }}
 {% endfor %}

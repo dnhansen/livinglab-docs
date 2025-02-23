@@ -29,7 +29,7 @@ sections:
     content: TODO
   - title: Configuration management
     content: |
-      The project shall use Git for version control. Developers shall strive to integrate changes to the mainline branch as soon as their code is healthy (that is, they shall perform continuous integration, cf. TODO cite fowler-ci). Additional branches are allowed in personal workspaces of developers, as long as these are continuously merged with the mainline branch. Note that semi-integration, i.e., developers regularly pulling changes from mainline, is not sufficient, cf. TODO cite fowler-ci.
+      The project shall use Git for version control. Developers shall strive to integrate changes to the mainline branch as soon as their code is healthy (that is, they shall perform continuous integration, cf. {% cite 'fowler-ci' %}). Additional branches are allowed in personal workspaces of developers, as long as these are continuously merged with the mainline branch. Note that semi-integration, i.e., developers regularly pulling changes from mainline, is not sufficient, cf. {% cite 'fowler-ci' %}.
 
       TODO hiding work-in-progress
   - title: Continuous integration and delivery

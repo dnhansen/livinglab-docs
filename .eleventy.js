@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'fs';
 import { join, extname, basename } from 'path';
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-// import references from 'src/_data/references.json' assert { type: 'json' };
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 
 import markdownit from "markdown-it";
 
@@ -18,6 +18,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addWatchTarget("src/assets/");
     eleventyConfig.addWatchTarget("src/fonts/");
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+    eleventyConfig.addPlugin(EleventyRenderPlugin);
 
 
     // Create collection of views
@@ -57,7 +58,7 @@ export default function(eleventyConfig) {
       });
 
 
-      const md = markdownit()
+      const md = markdownit();
 
         eleventyConfig.addFilter("markdownify", (str) => {
             return md.render(str);
