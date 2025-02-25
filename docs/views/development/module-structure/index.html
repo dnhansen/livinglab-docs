@@ -131,7 +131,7 @@
 
 <h2>Model</h2>
 <div class="diagram-container">
-    <object class="toggle" data="/livinglab-docs/assets/layers-light.svg" data-light="/livinglab-docs/assets/layers-light.svg" data-dark="/livinglab-docs/assets/layers-dark.svg"></object>
+    <object class="toggle" data="/livinglab-docs/assets/module-structure-light.svg" data-light="/livinglab-docs/assets/module-structure-light.svg" data-dark="/livinglab-docs/assets/module-structure-dark.svg"></object>
 </div>
 <p class="presentation-key">Model kind: UML package diagram</p>
 <p>Source: <a href="/livinglab-docs/references/#rozanski-woods">[7]</a>, p. 360</p>
@@ -139,23 +139,30 @@
 <h2>Elements</h2>
 <dl>
     
-    <dt>User interface</dt>
-    <dd><p>The web-based user interface is implemented in this module.</p>
+    <dt>Client</dt>
+    <dd><p>A consumer of the API exposed by the Presentation layer.</p>
 </dd>
     
-    <dt>Back-end</dt>
-    <dd><p>The business logic and domain model are implemented in this module. It provides the following functionality:</p>
+    <dt>Presentation</dt>
+    <dd><p>This layer implements a minimal API containing the following:</p>
 <ul>
-<li>Exposing an API to be consumed by users.</li>
-<li>Authenticating users and authorising user requests.</li>
-<li>Validation and handling of user requests.</li>
-<li>Error handling.</li>
-<li>Caching.</li>
+<li>A middleware pipeline, containing elements used for e.g. authentication and authorisation, logging, and endpoint routing.</li>
+<li>API endpoints, by specifying which URLs are exposed by the API, and which handlers (in the Domain/application layer) should be called with which arguments.</li>
 </ul>
+<p>The Presentation layer depends on the ASP.NET Core framework for setting up the API, adding middleware elements, dependency injection containers, and adding API endpoints.</p>
+<p>This layer has a source code dependency on the Domain/application layer through references to methods used as API endpoint handlers.</p>
 </dd>
     
-    <dt>Database</dt>
-    <dd><p>The database and database management system are implemented in this layer.</p>
+    <dt>Domain/application</dt>
+    <dd><p>In this layer the domain/business logic is implemented. Note that this layer cannot depend on any other layer, nor on the ASP.NET Core or EF Core frameworks. Hence it must expose interfaces that are implemented by the Infrastructure layer, and rely on dependency injection to obtain references to entities in said layer.</p>
+</dd>
+    
+    <dt>Infrastructure</dt>
+    <dd><p>This layer uses EF Core to access the DMBS. It has a source code dependency on the Domain/application layer through implementations of interfaces defined in said layer.</p>
+</dd>
+    
+    <dt>Platform</dt>
+    <dd><p>This layer encapsulates the libraries offered by the .NET platform. Note that only the Presentation layer may have dependencies on ASP.NET Core, while only the Infrastructure layer may depend on EF Core. In contrast, all packages except for the client (which is not implemented using .NET) may depend on the .NET Base Class Library.</p>
 </dd>
     
 </dl>
