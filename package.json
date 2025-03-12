@@ -3,8 +3,8 @@
   "scripts": {
     "clean": "rm -rf docs",
     "build": "npm run clean && npx @11ty/eleventy",
-    "watch": "npm run build --watch",
-    "start": "npm run build --serve"
+    "watch": "npm run clean && npx @11ty/eleventy --watch",
+    "start": "npm run clean && npx @11ty/eleventy --serve"
   },
   "type": "module",
   "author": "Danny Nygård Hansen <dnh@qgg.au.dk>",
