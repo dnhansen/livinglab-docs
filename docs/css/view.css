@@ -41,3 +41,32 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+table {
+    background-color: #eef4f7;
+    border-radius: 3px;
+    padding: 0.3em 0.5em;
+    font-family: var(--sidebar-font);
+    font-size: 16px;
+}
+
+thead {
+    color: #595959;
+    font-size: 80%;
+    text-transform: uppercase;
+}
+
+table code {
+    background-color: #e4eef1;
+    color: #717170;
+}
+
+th, td {
+    text-align: left;
+}

@@ -133,39 +133,75 @@
 
 
 <p>TODO figure out best way to handle versioning of dependencies.</p>
-<p>Below, <code>X</code> refers to the most recent stable release of PostgreSQL available for the operating system. (TODO which is this?) This view assumes that the database server and application server are distinct hosts.</p>
+<p>This view assumes that the database server and application server are distinct hosts.</p>
 
 
 
-<h2>Database server</h2>
+<h2>Packages/modules</h2>
 
+<p>In the following table, <code>X</code> refers to the most recent stable release of PostgreSQL available for the operating system, and <code>Y</code> refers to the desired version of .NET (TODO 8 vs. 9?).</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Debian</th>
+<th>Rocky Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PostgreSQL server</td>
+<td><code>postgresql-X</code></td>
+<td><code>postgresql:X/server</code></td>
+</tr>
+<tr>
+<td>PostgreSQL client</td>
+<td><code>postgresql-client-X</code></td>
+<td><code>postgresql:X/client</code></td>
+</tr>
+<tr>
+<td>ASP.NET Core Runtime</td>
+<td><code>aspnetcore-runtime-Y</code></td>
+<td><code>aspnetcore-runtime-Y</code></td>
+</tr>
+<tr>
+<td>Reverse proxy</td>
+<td><code>nginx</code></td>
+<td><code>nginx</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note the following:</p>
 <ul>
-<li><em>Operating system</em>: The latest stable version of Debian.</li>
-<li><em>PostgreSQL server</em>: Install the Debian package <code>postgres-X</code>. Note that this package has a series of dependencies, some of which are mentioned below.</li>
-<li><em>PostgreSQL client</em>: This is installed by the Debian package <code>postgresql-client-X</code> which is a dependency of the package <code>postgres-X</code>, and thus this does not need to be installed separately.</li>
-<li><em>PostgreSQL contrib</em>: TODO do we need this? In any case it is a virtual package <code>postgresql-contrib-X</code> provided by <code>postgres-X</code>.</li>
-<li><em>Database schemas</em>: TODO installation (and configuration management) (does this belong here since it's part of CI/CD?)</li>
+<li>The PostgreSQL server packages depend on the client packages.</li>
+<li>On Rocky Linux, remember to enable the <code>postgresql</code> module before installing PostgreSQL packages.</li>
+<li>The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on Rocky, but on Debian?).</li>
+<li>The ASP.NET Core Runtime is not included in Debian's default package directory, so to install the package <code>aspnetcore-runtime-Y</code>, it is necessary to first install the package <code>packages-microsoft-prod.deb</code> from the <a href="https://packages.microsoft.com/config/debian/">Linux software repository for Microsoft products</a>. See also <a href="https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian">Microsoft's instructions</a> (TODO wget vs. curl?) for installing the package.</li>
 </ul>
 
 
 
-<h2>Application server</h2>
+<h2>Deployment on hosts</h2>
 
+<h3>Database server</h3>
 <ul>
-<li><em>Operating system</em>: Cf. database server.</li>
-<li><em>PostgreSQL client</em>: Install the Debian package <code>postgresql-client-X</code>. Note that the PostgreSQL server is <em>not</em> installed on the application server, so the client must be installed manually.</li>
-<li><em>ASP.NET Core Runtime</em>: Follow <a href="https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian">Microsoft's instructions</a> (TODO wget vs. curl?) for installing the package <code>aspnetcore-runtime-Y</code>, where <code>Y</code> is the latest version of .NET. TODO: STS vs. LTS? Note that it is not necessary to install the .NET Runtime. Note also that the linked instructions install the Microsoft Package Repository. (TODO list the repository separately?)</li>
-<li><em>Reverse proxy</em>: Debian package <code>nginx</code>.</li>
-<li><em>Back-end application</em>: TODO dll files (does this belong here since it's part of CI/CD?)</li>
-<li><em>Front-end</em>: TODO static files (does this belong here since it's part of CI/CD?)</li>
+<li>Operating system</li>
+<li>PostgreSQL server</li>
+<li>PostgreSQL client</li>
+<li>Database schemas: TODO installation (and configuration management)</li>
 </ul>
-
-
-
-<h2>Client host</h2>
-
+<h3>Application server</h3>
 <ul>
-<li>Web browser.</li>
+<li>Operating system</li>
+<li>PostgreSQL client</li>
+<li>ASP.NET Core Runtime</li>
+<li>Reverse proxy</li>
+<li>Back-end application: TODO dll files</li>
+<li>Front-end: TODO static files</li>
+</ul>
+<h3>Client host</h3>
+<ul>
+<li>Web browser</li>
 </ul>
 
 

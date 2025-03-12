@@ -8,24 +8,40 @@ sections:
     content: |
       TODO figure out best way to handle versioning of dependencies.
 
-      Below, `X` refers to the most recent stable release of PostgreSQL available for the operating system. (TODO which is this?) This view assumes that the database server and application server are distinct hosts.
-  - title: "Database server"
+      This view assumes that the database server and application server are distinct hosts.
+  - title: "Packages/modules"
     content: |
-      - *Operating system*: The latest stable version of Debian.
-      - *PostgreSQL server*: Install the Debian package `postgres-X`. Note that this package has a series of dependencies, some of which are mentioned below.
-      - *PostgreSQL client*: This is installed by the Debian package `postgresql-client-X` which is a dependency of the package `postgres-X`, and thus this does not need to be installed separately.
-      - *PostgreSQL contrib*: TODO do we need this? In any case it is a virtual package `postgresql-contrib-X` provided by `postgres-X`.
-      - *Database schemas*: TODO installation (and configuration management) (does this belong here since it's part of CI/CD?)
-  - title: "Application server"
+      In the following table, `X` refers to the most recent stable release of PostgreSQL available for the operating system, and `Y` refers to the desired version of .NET (TODO 8 vs. 9?).
+
+      | Element | Debian | Rocky Linux |
+      | ------- | ------ | ----------- |
+      | PostgreSQL server | `postgresql-X` | `postgresql:X/server` |
+      | PostgreSQL client | `postgresql-client-X` | `postgresql:X/client` |
+      | ASP.NET Core Runtime | `aspnetcore-runtime-Y` | `aspnetcore-runtime-Y` |
+      | Reverse proxy | `nginx` | `nginx` |
+
+      Note the following:
+      - The PostgreSQL server packages depend on the client packages.
+      - On Rocky Linux, remember to enable the `postgresql` module before installing PostgreSQL packages.
+      - The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on Rocky, but on Debian?).
+      - The ASP.NET Core Runtime is not included in Debian's default package directory, so to install the package `aspnetcore-runtime-Y`, it is necessary to first install the package `packages-microsoft-prod.deb` from the [Linux software repository for Microsoft products](https://packages.microsoft.com/config/debian/). See also [Microsoft's instructions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian) (TODO wget vs. curl?) for installing the package.
+  - title: "Deployment on hosts"
     content: |
-      - *Operating system*: Cf. database server.
-      - *PostgreSQL client*: Install the Debian package `postgresql-client-X`. Note that the PostgreSQL server is *not* installed on the application server, so the client must be installed manually.
-      - *ASP.NET Core Runtime*: Follow [Microsoft's instructions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian) (TODO wget vs. curl?) for installing the package `aspnetcore-runtime-Y`, where `Y` is the latest version of .NET. TODO: STS vs. LTS? Note that it is not necessary to install the .NET Runtime. Note also that the linked instructions install the Microsoft Package Repository. (TODO list the repository separately?)
-      - *Reverse proxy*: Debian package `nginx`.
-      - *Back-end application*: TODO dll files (does this belong here since it's part of CI/CD?)
-      - *Front-end*: TODO static files (does this belong here since it's part of CI/CD?)
-  - title: "Client host"
-    content: |
-      - Web browser.
+      ### Database server
+      - Operating system
+      - PostgreSQL server
+      - PostgreSQL client
+      - Database schemas: TODO installation (and configuration management)
+  
+      ### Application server
+      - Operating system
+      - PostgreSQL client
+      - ASP.NET Core Runtime
+      - Reverse proxy
+      - Back-end application: TODO dll files
+      - Front-end: TODO static files
+  
+      ### Client host
+      - Web browser
 layout: "layouts/view.njk"
 ---
