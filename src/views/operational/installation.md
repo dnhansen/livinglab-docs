@@ -43,5 +43,40 @@ sections:
   
       ### Client host
       - Web browser
+  - title: "PostgreSQL configuration (Rocky Linux)"
+    content: |
+      TODO this is temporarily here.
+
+      To configure the installation of the PostgreSQL server, perform the following actions on the database server:
+
+      1. Initialise the database cluster (create data directory, config files, etc. in `/var/lib/pgsql`):
+             
+             postgresql-setup --initdb
+
+      2. Allow external connections: In `/var/lib/pgsql/data/postgresql.conf`, change the line (TODO check the more secure way to do this)
+
+             listen_addresses = '*'
+
+      3. Allow connections from the application server: In `/var/lib/pgsql/data/pg_hba.conf`, append the line
+      
+             host    all     all     172.16.2.82/32     trust
+         
+         Note that the last column `trust` should be changed to configure password authentication. TODO
+
+      4. Enable and start the PostgreSQL service:
+
+             systemctl enable postgresql
+             systemctl start postgresql
+
+      5. Configure firewalld to allow traffic from the application server on port 5432 (TODO check if this is the best way):
+      
+             sudo firewall-cmd --add-rich-rule='rule family="ipv4" source address="172.16.2.82" port port=5432 protocol=tcp accept' --permanent
+             sudo firewall-cmd --reload
+      
+      Afterwards, test the connection on the application server:
+
+          psql -h 172.16.2.81 -U postgres -d postgres
+      
+      TODO: Consider how much of this can be brought under configuration management.
 layout: "layouts/view.njk"
 ---

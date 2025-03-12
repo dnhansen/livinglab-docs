@@ -205,6 +205,47 @@
 </ul>
 
 
+
+<h2>PostgreSQL configuration (Rocky Linux)</h2>
+
+<p>TODO this is temporarily here.</p>
+<p>To configure the installation of the PostgreSQL server, perform the following actions on the database server:</p>
+<ol>
+<li>
+<p>Initialise the database cluster (create data directory, config files, etc. in <code>/var/lib/pgsql</code>):</p>
+<pre><code>postgresql-setup --initdb
+</code></pre>
+</li>
+<li>
+<p>Allow external connections: In <code>/var/lib/pgsql/data/postgresql.conf</code>, change the line (TODO check the more secure way to do this)</p>
+<pre><code>listen_addresses = '*'
+</code></pre>
+</li>
+<li>
+<p>Allow connections from the application server: In <code>/var/lib/pgsql/data/pg_hba.conf</code>, append the line</p>
+<pre><code>host    all     all     172.16.2.82/32     trust
+</code></pre>
+<p>Note that the last column <code>trust</code> should be changed to configure password authentication. TODO</p>
+</li>
+<li>
+<p>Enable and start the PostgreSQL service:</p>
+<pre><code>systemctl enable postgresql
+systemctl start postgresql
+</code></pre>
+</li>
+<li>
+<p>Configure firewalld to allow traffic from the application server on port 5432 (TODO check if this is the best way):</p>
+<pre><code>sudo firewall-cmd --add-rich-rule='rule family=&quot;ipv4&quot; source address=&quot;172.16.2.82&quot; port port=5432 protocol=tcp accept' --permanent
+sudo firewall-cmd --reload
+</code></pre>
+</li>
+</ol>
+<p>Afterwards, test the connection on the application server:</p>
+<pre><code>psql -h 172.16.2.81 -U postgres -d postgres
+</code></pre>
+<p>TODO: Consider how much of this can be brought under configuration management.</p>
+
+
     </main>
     </div>
     <footer>
