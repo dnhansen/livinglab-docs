@@ -29,6 +29,8 @@ layout: layouts/base.njk
 {% endif %}
 
 {% for section in sections %}
+{% if section.title %}
 <h2>{{ section.title }}</h2>
+{% endif %}
 {{ section.content | markdownify | renderContent | safe }}
 {% endfor %}

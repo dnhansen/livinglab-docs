@@ -129,22 +129,44 @@
 
 
 
-<h2>Model</h2>
-<div class="diagram-container">
-    <object class="toggle" data="/livinglab-docs/assets/-light.svg" data-light="/livinglab-docs/assets/-light.svg" data-dark="/livinglab-docs/assets/-dark.svg"></object>
-</div>
-<p class="presentation-key">Model kind: TODO</p>
-<p>Source: [?], p. TODO</p>
 
-<h2>Elements</h2>
-<dl>
-    
-    <dt>TODO</dt>
-    <dd><p>TODO</p>
-</dd>
-    
-</dl>
 
+
+<p>TODO figure out best way to handle versioning of dependencies.</p>
+<p>Below, <code>X</code> refers to the most recent stable release of PostgreSQL available for the operating system. (TODO which is this?) This view assumes that the database server and application server are distinct hosts.</p>
+
+
+
+<h2>Database server</h2>
+
+<ul>
+<li>Operating system: The latest stable version of Debian.</li>
+<li>PostgreSQL server: Install the Debian package <code>postgres-X</code>. Note that this package has a series of dependencies, some of which are mentioned below.</li>
+<li>PostgreSQL client: This is installed by the Debian package <code>postgresql-client-X</code> which is a dependency of the package <code>postgres-X</code>, and thus this does not need to be installed separately.</li>
+<li>PostgreSQL contrib: TODO do we need this? In any case it is a virtual package <code>postgresql-contrib-X</code> provided by <code>postgres-X</code>.</li>
+<li>Database schemas: TODO installation (and configuration management) (does this belong here since it's part of CI/CD?)</li>
+</ul>
+
+
+
+<h2>Application server</h2>
+
+<ul>
+<li>Operating system: Cf. database server.</li>
+<li>PostgreSQL client: Install the Debian package <code>postgresql-client-X</code>. Note that the PostgreSQL server is <em>not</em> installed on the application server, so the client must be installed manually.</li>
+<li>ASP.NET Core Runtime: Follow <a href="https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian">Microsoft's instructions</a> (TODO wget vs. curl?) for installing the package <code>aspnetcore-runtime-Y</code>, where <code>Y</code> is the latest version of .NET. TODO: STS vs. LTS? Note that it is not necessary to install the .NET Runtime. Note also that the linked instructions install the Microsoft Package Repository. (TODO list the repository separately?)</li>
+<li>Reverse proxy: Debian package <code>nginx</code>.</li>
+<li>Back-end application: TODO dll files (does this belong here since it's part of CI/CD?)</li>
+<li>Front-end: TODO static files (does this belong here since it's part of CI/CD?)</li>
+</ul>
+
+
+
+<h2>Client host</h2>
+
+<ul>
+<li>Web browser.</li>
+</ul>
 
 
     </main>
