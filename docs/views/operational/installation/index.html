@@ -249,6 +249,44 @@ sudo firewall-cmd --reload
 <p>TODO: Consider how much of this can be brought under configuration management.</p>
 
 
+
+<h2>Nginx configuration</h2>
+
+<p>TODO this is also temporarily here.</p>
+<p>Perform the following actions on the application server:</p>
+<ol>
+<li>
+<p>Allow HTTP traffic through the firewall:</p>
+<pre><code>firewall-cmd --permanent --add-service=http
+firewall-cmd --reload
+</code></pre>
+</li>
+<li>
+<p>Modify <code>/etc/nginx/nginx.conf</code> to the following:</p>
+<pre><code>daemon off;
+worker_processes 1;
+events {
+    worker_connections 1024;
+}
+http {
+    access_log /dev/stdout;
+    error_log /dev/stderr;
+    server {
+        location / {
+            proxy_pass http://localhost:5000;
+        }
+    }
+}
+</code></pre>
+<p>This configures Nginx to act as a proxy server for incoming HTTP traffic, redirecting it to <code>localhost:5000</code>. Furthermore, Nginx will not act as a daemon, and will output access and error information to standard output and error, respectively.</p>
+</li>
+<li>
+<p>Start Nginx by running <code>nginx</code>.</p>
+</li>
+</ol>
+<p>The configuration can be tested by also running an API on the application server listening on port 5000, and sending requests to the application server from a different host.</p>
+
+
     </main>
     </div>
     <footer>
