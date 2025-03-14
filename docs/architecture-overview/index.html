@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/livinglab-docs/scripts/script.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/livinglab-docs/css/base.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/view.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/references.css">
+    <link rel="stylesheet" href="/livinglab-docs/css/dark.css" media="(prefers-color-scheme: dark)" id="dark-css">
+    <title>Architecture overview</title>
+</head>
+<body>
+    <header>
+        <a href="/livinglab-docs/">QGG LivingLab</a>
+        <span>
+            Theme:
+            <select class="theme-selector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </span>
+    </header>
+    <div class="content-wrapper">
+    <nav class="sidebar">
+        
+        <ol class="sidebar-list-outer">
+            <li><span class="sidebar-category">Frontmatter</span>
+                <ol>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/introduction/">Introduction</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/stakeholders/">Stakeholders</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/quality-properties/">Quality properties</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/architecture-overview/">Architecture overview</a>
+                    </li>
+                </ol>
+            </li>
+            <li><span class="sidebar-category">Architectural views</span>
+                <ol>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/views/context/context-model/">Context model</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/views/functional/functional-structure/">Functional structure</a>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Information views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/information/static-information-structure/">Static information structure</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/information/information-flow/">Information flow</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/views/concurrency/concurrency-model/">Concurrency model</a>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Development views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/development/module-structure/">Module structure</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/development/codeline-organisation/">Codeline organisation</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Deployment views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/deployment/runtime-platform/">Runtime platform</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/deployment/network-model/">Network model</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <button class="sidebar-expander">
+                            <span>Operational views</span>
+                            <svg class="chevron" focusable="false" viewBox="0 0 16 16" width="16" height="16" overflow="visible"><path d="M5.22 3.22a.749.749 0 0 1 1.06 0l4.25 4.25a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 1 1-1.06-1.06L8.939 8 5.22 4.28a.749.749 0 0 1 0-1.06Z"></path></svg>
+                        </button>
+                        <ol class="sidebar-expandable">
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/operational/installation/">Installation</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/operational/migration/">Migration</a>
+                            </li>
+                            <li class="sidebar-link">
+                                <a href="/livinglab-docs/views/operational/administration/">Administration</a>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li><span class="sidebar-category">Backmatter</span>
+                <ol>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/glossary/">Glossary</a>
+                    </li>
+                    <li class="sidebar-link">
+                        <a href="/livinglab-docs/references/">References</a>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+      </nav>
+    <main>
+        
+<h1>Architecture overview</h1>
+
+<p>
+    The business logic is implemented in a .NET back-end application, which exposes an ASP.NET Core minimal API. This API is consumed by a React SPA. The back-end is supported by a PostgreSQL database, extended with suitable time-series processing capabilities.
+</p>
+<p>
+    These components are given a variation of a layered architecture &ndash; reminiscent of hexagonal, onion, and clean architectures &ndash; in which the client SPA and the data access infrastructure both have source code dependencies on the back-end. The client simply consumes the API, and for the data access layer this dependency is achieved by dependency inversion (cf. the <a href="/livinglab-docs/views/development/module-structure/">module structure view</a>).
+</p>
+
+<h2>Architectural design approach</h2>
+<p>
+    This architecture description (AD) is informed by the principles outlined in ISO 42010 <a href="/livinglab-docs/references/#iso-42010-2022">[4]</a> (in particular clause 6), the international standard for architecture descriptions of systems and software. While this AD leverages ISO 42010 as a guiding framework, the authors make no claims that it is compliant with all aspects of the standard.
+</p>
+<p>
+    The viewpoints used in this AD are drawn from the comprehensive set defined by Rozanski and Woods <a href="/livinglab-docs/references/#rozanski-woods">[7]</a>, which is based on the 2011 version of ISO 42010 <a href="/livinglab-docs/references/#iso-42010-2011">[3]</a>. The viewpoints used in this AD are:
+</p>
+<ul>
+    <li><i>Context viewpoint</i>: Describes the relationships, dependencies, and interactions between the system and its environment.</li>
+    <li><i>Functional viewpoint</i>: Describes the system's runtime functional elements and their responsibilities, interfaces, and primary interactions.</li>
+    <li><i>Information viewpoint</i>: Describes the way the system stores, manipulates, manages, and distributes information.</li>
+    <li><i>Concurrency viewpoint</i>: Describes the concurrency structure of the system and maps functional elements to concurrency units to clearly identify the parts of the system that can execute concurrently and how this is coordinated and controlled.</li>
+    <li><i>Development viewpoint</i>: Describes the architecture that supports the software development process.</li>
+    <li><i>Deployment viewpoint</i>: Describes the environment into which the system will be deployed and the dependencies that the system has on elements of it.</li>
+    <li><i>Operational viewpoint</i>: Describes how the system will be operated, administered, and supported when it is running in its production environment.</li>
+</ul>
+<p>
+    No claims are made that the specifications of these viewpoints found in <a href="/livinglab-docs/references/#rozanski-woods">[7]</a> are compliant with either version of ISO 42010.
+</p>
+<p>
+    Many of the architecture view components used in this AD, as well as their specifications, are adapted from <a href="/livinglab-docs/references/#rozanski-woods">[7]</a> and <a href="/livinglab-docs/references/#clements-views-and-beyond">[2]</a>. Note that the former, being based on ISO 42010:2011, uses terminology incompatible with ISO 42010:2022. Note also that the latter is not based on either version of ISO 42010, and its terminology also conflicts with that of the standard.
+</p>
+    </main>
+    </div>
+    <footer>
+        QGG Aarhus University
+    </footer>
+    <script>
+
+  // Get the current page's URL path
+  const currentPath = window.location.pathname;
+
+  // Find all sidebar links
+  const links = document.querySelectorAll('nav a');
+
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || href + 'index.html' === currentPath) {
+        const linkContainer = link.parentNode;
+        linkContainer.classList.add('current');
+        
+        const linkIsNested = linkContainer.parentNode.classList.contains("sidebar-expandable");
+        if (linkIsNested) {
+            const expandable = linkContainer.parentNode;
+            expandable.style.display = "block";
+
+            const chevron = expandable.parentNode.querySelector(".chevron");
+            chevron.classList.add('open');
+
+            const expander = expandable.parentNode.querySelector(".sidebar-expander");
+            expander.classList.add("current");
+            expander.classList.add("open");
+        }
+    }
+  });
+
+  
+  // Add toggle to buttons in sidebar
+  document.querySelectorAll(".sidebar-expander").forEach(btn => {
+        btn.addEventListener("click", function() {
+            const expandable = this.parentNode.querySelector(".sidebar-expandable");
+            const isHidden = window.getComputedStyle(expandable).display === "none";
+            expandable.style.display = isHidden ? "block" : "none";
+            
+            const chevron = this.querySelector(".chevron");
+            chevron.classList.toggle("open");
+            this.classList.toggle("open");
+        });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+  document.body.classList.add("loaded");
+  }, 10);
+});
+</script>
+</body>
+</html>

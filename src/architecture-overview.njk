@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Architecture overview
+---
+
+<h1>{{title}}</h1>
+
+<p>
+    The business logic is implemented in a .NET back-end application, which exposes an ASP.NET Core minimal API. This API is consumed by a React SPA. The back-end is supported by a PostgreSQL database, extended with suitable time-series processing capabilities.
+</p>
+<p>
+    These components are given a variation of a layered architecture &ndash; reminiscent of hexagonal, onion, and clean architectures &ndash; in which the client SPA and the data access infrastructure both have source code dependencies on the back-end. The client simply consumes the API, and for the data access layer this dependency is achieved by dependency inversion (cf. the <a href="/views/development/module-structure/">module structure view</a>).
+</p>
+
+<h2>Architectural design approach</h2>
+<p>
+    This architecture description (AD) is informed by the principles outlined in ISO 42010 {% cite 'iso-42010-2022' %} (in particular clause 6), the international standard for architecture descriptions of systems and software. While this AD leverages ISO 42010 as a guiding framework, the authors make no claims that it is compliant with all aspects of the standard.
+</p>
+<p>
+    The viewpoints used in this AD are drawn from the comprehensive set defined by Rozanski and Woods {% cite 'rozanski-woods' %}, which is based on the 2011 version of ISO 42010 {% cite 'iso-42010-2011' %}. The viewpoints used in this AD are:
+</p>
+<ul>
+    <li><i>Context viewpoint</i>: Describes the relationships, dependencies, and interactions between the system and its environment.</li>
+    <li><i>Functional viewpoint</i>: Describes the system's runtime functional elements and their responsibilities, interfaces, and primary interactions.</li>
+    <li><i>Information viewpoint</i>: Describes the way the system stores, manipulates, manages, and distributes information.</li>
+    <li><i>Concurrency viewpoint</i>: Describes the concurrency structure of the system and maps functional elements to concurrency units to clearly identify the parts of the system that can execute concurrently and how this is coordinated and controlled.</li>
+    <li><i>Development viewpoint</i>: Describes the architecture that supports the software development process.</li>
+    <li><i>Deployment viewpoint</i>: Describes the environment into which the system will be deployed and the dependencies that the system has on elements of it.</li>
+    <li><i>Operational viewpoint</i>: Describes how the system will be operated, administered, and supported when it is running in its production environment.</li>
+</ul>
+<p>
+    No claims are made that the specifications of these viewpoints found in {% cite 'rozanski-woods' %} are compliant with either version of ISO 42010.
+</p>
+<p>
+    Many of the architecture view components used in this AD, as well as their specifications, are adapted from {% cite 'rozanski-woods' %} and {% cite 'clements-views-and-beyond' %}. Note that the former, being based on ISO 42010:2011, uses terminology incompatible with ISO 42010:2022. Note also that the latter is not based on either version of ISO 42010, and its terminology also conflicts with that of the standard.
+</p>
