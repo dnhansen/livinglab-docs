@@ -93,14 +93,12 @@ sections:
       2. Modify `/etc/nginx/nginx.conf` to the following:
 
              daemon off;
-             worker_processes 1;
-             events {
-                 worker_connections 1024;
-             }
+             events {}
              http {
                  access_log /dev/stdout;
                  error_log /dev/stderr;
                  server {
+                     listen 80;
                      location / {
                          proxy_pass http://localhost:5000;
                      }
