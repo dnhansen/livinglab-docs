@@ -29,7 +29,7 @@
     --hover-page-highlight-color: rgb(160, 203, 239);
     --current-page-border-color: rgb(0,105,194);
     --sidebar-category-color: #6f6f6f;
-    --view-description-color: gray;
+    --view-description-color: #6f6f6f;
 
     --button-background-color: rgb(233,233,237);
     --button-background-color-hover: rgb(208,208,215);
@@ -41,6 +41,8 @@
     --table-header-color: #595959;
     --table-code-background-color: #e4eef1;
     --table-code-color: #717170;
+
+    --chevron-color: black;
 }
 
 
@@ -326,6 +328,7 @@ button {
 
 .chevron {
     transition: none;
+    fill: var(--chevron-color);
 }
 
 .chevron.open {

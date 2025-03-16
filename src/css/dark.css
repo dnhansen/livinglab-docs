@@ -1,15 +1,28 @@
 :root {
-    --background-color: rgb(34, 34, 34);
+    --background-color: #1b1b1b;
     --text-color: rgb(226,226,226);
     --header-text-color: rgb(189,189,189);
     --link-color: rgb(119,170,255);
     --border-color: rgb(66, 66, 66);
+    --code-color: #989993;
+    --code-background-color: #352f29;
+    --current-page-highlight-color: #162f44;
+    --hover-page-highlight-color: #26445b;
+    --current-page-border-color: #8cb4ff;
+    --sidebar-category-color: #868686;
+    --view-description-color: #868686;
 
     --button-background-color: rgb(43,42,51);
     --button-background-color-hover: rgb(82,82,94);
     --button-text-color: rgb(251,251,254);
     --button-border-color: rgb(143,143,157);
     --button-border-color-hover: rgb(177,177,185);
+    --table-background-color: #2b2d2f;
+    --table-header-color: #a2a2a2;
+    --table-code-background-color: #373f42;
+    --table-code-color: #909090;
+
+    --chevron-color: white;
 
     color-scheme: dark;
 }
