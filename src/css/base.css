@@ -23,12 +23,24 @@
     --header-text-color: rgb(68,68,68);
     --link-color: rgb(20, 129, 184); /* rgb(0,105,194) */
     --border-color: rgb(222,222,222);
+    --code-color: #717170;
+    --code-background-color: #faf8f5;
+    --current-page-highlight-color: rgb(207,232,253);
+    --hover-page-highlight-color: rgb(160, 203, 239);
+    --current-page-border-color: rgb(0,105,194);
+    --sidebar-category-color: #6f6f6f;
+    --view-description-color: gray;
 
     --button-background-color: rgb(233,233,237);
     --button-background-color-hover: rgb(208,208,215);
     --button-text-color: rgb(0,0,0);
     --button-border-color: rgb(143,143,157);
     --button-border-color-hover: rgb(103,103,116);
+
+    --table-background-color: #eef4f7;
+    --table-header-color: #595959;
+    --table-code-background-color: #e4eef1;
+    --table-code-color: #717170;
 }
 
 
@@ -206,19 +218,19 @@ main a:hover {
 code {
     font-family: var(--code-font);
     font-size: 14px;
-    color: #717170;
+    color: var(--code-color);
 }
 
 :not(pre) > code {
     padding: .1em .2em;
     margin: 0;
     white-space: break-spaces;
-    background-color: #faf8f5;
+    background-color: var(--code-background-color);
     border-radius: 3px;
 }
 
 pre {
-    background-color: #faf8f5;
+    background-color: var(--code-background-color);
     border-radius: 3px;
     padding: 0.3em 0.5em;
     margin-left: -0.5em;
@@ -286,13 +298,13 @@ button {
 }
 
 .current:not(.open) {
-    background-color: rgb(207,232,253);
-    border-left: solid 3px rgb(0,105,194);
+    background-color: var(--current-page-highlight-color);
+    border-left: solid 3px var(--current-page-border-color);
 }
 
 :is(.sidebar-expander, .sidebar-link):hover {
-    background-color: rgb(160, 203, 239);
-    border-left: solid 3px rgb(0,105,194);
+    background-color: var(--hover-page-highlight-color);
+    border-left: solid 3px var(--current-page-border-color);
     cursor: pointer;
 }
 
@@ -309,7 +321,7 @@ button {
     margin-bottom: 3px;
     padding-left: 9px;
     display: block;
-    color: #6f6f6f;
+    color: var(--sidebar-category-color);
 }
 
 .chevron {
