@@ -11,7 +11,7 @@ sections:
       This view assumes that the database server and application server are distinct hosts.
   - title: "Packages/modules"
     content: |
-      In the following table, `X` refers to the most recent stable release of PostgreSQL available for the operating system, and `Y` refers to the desired version of .NET (TODO 8 vs. 9?).
+      In the following table, `X` refers to the most recent stable release of PostgreSQL available for the operating system, and `Y` refers to the latest version of .NET.
 
       | Element | Debian | Rocky Linux |
       | ------- | ------ | ----------- |
