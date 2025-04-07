@@ -18,7 +18,7 @@ sections:
       | PostgreSQL server | `postgresql-X` | `postgresql:X/server` |
       | PostgreSQL client | `postgresql-client-X` | `postgresql:X/client` |
       | ASP.NET Core Runtime | `aspnetcore-runtime-Y` | `aspnetcore-runtime-Y` |
-      | Reverse proxy | `nginx` | `nginx` |
+      | Nginx | `nginx` | `nginx` |
 
       Note the following:
       - The PostgreSQL server packages depend on the client packages.
@@ -37,7 +37,7 @@ sections:
       - Operating system
       - PostgreSQL client
       - ASP.NET Core Runtime
-      - Reverse proxy
+      - Nginx
       - Back-end application: TODO dll files
       - Front-end: TODO static files
   
