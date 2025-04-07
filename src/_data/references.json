@@ -63,5 +63,16 @@
     "pages": "xli + 754",
     "version": "2.5.1",
     "url": "https://www.omg.org/spec/UML/"
+  },
+  {
+    "id": "van-deursen-seemann-di",
+    "type": "book",
+    "title": "Dependency Injection: Principles, Practices, and Patterns",
+    "author": "van Deursen, Seemann",
+    "edition": "1st",
+    "publisher": "Manning",
+    "pages": "xxv + 522",
+    "isbn": "9781617294730",
+    "year": 2019
   }
 ]

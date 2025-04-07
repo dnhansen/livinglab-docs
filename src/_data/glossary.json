@@ -42,5 +42,9 @@
     {
         "term": "profile",
         "definition": "In the context of UML: Extends UML with a collection of stereotypes. The standard profile specifies a set of predefined standard stereotypes. See {% cite 'uml-spec' %}, §12.3 for a description of profiles in general, and §22 for the standard profile."
+    },
+    {
+        "term": "composition root",
+        "definition": "A single, logical location in an application where modules are composed together. See {% cite 'van-deursen-seemann-di' %}, §4.1."
     }
 ]

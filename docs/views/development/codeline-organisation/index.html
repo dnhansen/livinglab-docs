@@ -140,20 +140,42 @@
 <p>The back-end codebase should have the following rough directory structure:</p>
 <pre><code>livinglab-backend/
 ├── LivingLab.sln
+├── Directory.Build.props
 ├── src/
-│   └── LivingLab/
-│       ├── appsettings.Development.json
-│       ├── appsettings.json
-│       ├── LivingLab.csproj
-│       ├── Program.cs
-│       ├── Service1.cs
-│       └── Service2.cs
+│   ├── Directory.Build.props
+│   ├── LivingLab/
+│   │   ├── LivingLab.csproj
+│   │   ├── Program.cs
+│   │   ├── appsettings.Development.json
+│   │   ├── appsettings.json
+│   │   └── Properties/
+│   │       └── launchSettings.json
+│   └── LivingLab.Module/
+│       ├── LivingLab.Module.csproj
+│       ├── Element.cs
+│       ├── ...
+│       └── DependencyInjection/
+│           └── ServiceCollectionExtensions.cs
 └── test/
-    └── LivingLab.Tests/
+    ├── Directory.Build.props
+    └── LivingLab.Module.Tests/
         ├── LivingLab.Tests.csproj
-        ├── Test1.cs
-        └── Test2.cs
+        ├── ElementTests.cs
+        └── ...
 </code></pre>
+<p>These files should contain the following:</p>
+<ul>
+<li><code>LivingLab.sln</code>: The solution file referencing every project.</li>
+<li><code>Directory.Build.props</code>: Folder-specific settings. Note that by default, only the most specific (i.e., most deeply nested in the directory hierarchy) such file is read, cf. <a href="https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory#use-case-multi-level-merging">Microsoft's documentation</a>.</li>
+<li><code>src/</code> and <code>test/</code>: Production and test code, respectively.</li>
+<li><code>LivingLab*.csproj</code>: Project-specific settings. Note that every project (both in <code>src</code> and <code>test</code>) should reference the composition root (the <code>LivingLab</code> project), and that the composition root should reference every project in <code>src</code> (cf. the <a href="/livinglab-docs/views/development/module-structure/">module structure</a>).</li>
+<li><code>Program.cs</code>: The application entry point. Only the composition root should contain an entry point.</li>
+<li><code>appsettings.Development.json</code>: TODO</li>
+<li><code>appsettings.json</code>: TODO</li>
+<li><code>Properties/launchSettings.json</code>: TODO</li>
+<li><code>DependencyInjection/</code>: Extension methods for dependency injection. Only relevant outside the composition root. TODO more details?</li>
+<li><code>&lt;filename&gt;Tests.cs</code>: Unit tests for elements in <code>&lt;filename&gt;.cs</code>.</li>
+</ul>
 <p>The directories <code>LivingLab</code> and <code>LivingLab.Tests</code> contain .NET projects, and the solution file <code>LivingLab.sln</code> should reference both projects.</p>
 
 

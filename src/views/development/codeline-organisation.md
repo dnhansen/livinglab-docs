@@ -10,20 +10,42 @@ sections:
 
           livinglab-backend/
           ├── LivingLab.sln
+          ├── Directory.Build.props
           ├── src/
-          │   └── LivingLab/
-          │       ├── appsettings.Development.json
-          │       ├── appsettings.json
-          │       ├── LivingLab.csproj
-          │       ├── Program.cs
-          │       ├── Service1.cs
-          │       └── Service2.cs
+          │   ├── Directory.Build.props
+          │   ├── LivingLab/
+          │   │   ├── LivingLab.csproj
+          │   │   ├── Program.cs
+          │   │   ├── appsettings.Development.json
+          │   │   ├── appsettings.json
+          │   │   └── Properties/
+          │   │       └── launchSettings.json
+          │   └── LivingLab.Module/
+          │       ├── LivingLab.Module.csproj
+          │       ├── Element.cs
+          │       ├── ...
+          │       └── DependencyInjection/
+          │           └── ServiceCollectionExtensions.cs
           └── test/
-              └── LivingLab.Tests/
+              ├── Directory.Build.props
+              └── LivingLab.Module.Tests/
                   ├── LivingLab.Tests.csproj
-                  ├── Test1.cs
-                  └── Test2.cs
+                  ├── ElementTests.cs
+                  └── ...
       
+      These files should contain the following:
+
+      - `LivingLab.sln`: The solution file referencing every project.
+      - `Directory.Build.props`: Folder-specific settings. Note that by default, only the most specific (i.e., most deeply nested in the directory hierarchy) such file is read, cf. [Microsoft's documentation](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory#use-case-multi-level-merging).
+      - `src/` and `test/`: Production and test code, respectively.
+      - `LivingLab*.csproj`: Project-specific settings. Note that every project (both in `src` and `test`) should reference the composition root (the `LivingLab` project), and that the composition root should reference every project in `src` (cf. the [module structure](/views/development/module-structure/)).
+      - `Program.cs`: The application entry point. Only the composition root should contain an entry point.
+      - `appsettings.Development.json`: TODO
+      - `appsettings.json`: TODO
+      - `Properties/launchSettings.json`: TODO
+      - `DependencyInjection/`: Extension methods for dependency injection. Only relevant outside the composition root. TODO more details?
+      - `<filename>Tests.cs`: Unit tests for elements in `<filename>.cs`.
+
       The directories `LivingLab` and `LivingLab.Tests` contain .NET projects, and the solution file `LivingLab.sln` should reference both projects.
   - title: Testing
     content: TODO
