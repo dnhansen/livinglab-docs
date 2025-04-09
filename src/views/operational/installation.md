@@ -110,6 +110,49 @@ sections:
       3. Start Nginx by running `nginx`.
     
       The configuration can be tested by also running an API on the application server listening on port 5000, and sending requests to the application server from a different host.
+  
+  - title: "SELinux configuration"
+    content: |
+      By default, SELinux is likely to block Nginx from connecting to port 5000 on localhost, at least when Nginx runs as a service. To allow this, create a custom policy module as follows:
+
+      1. Run the Nginx service.
+
+      2. Find the domain under which Nginx runs:
+
+             ps -eZ | grep nginx
+        
+         In the present case, the domain is `httpd_t`.
+      
+      3. Find the label attached to the desired port, here 5000:
+
+             semanage port -l | grep 5000
+         
+         In this case the label is `commplex_main_port_t`.
+      
+      4. Create a custom policy module `nginx_commplex.te` (this file can be saved anywhere):
+
+             module nginx_commplex 1.0;
+             require {
+                 type httpd_t;
+                 class tcp_socket name_connect;
+                 type commplex_main_port_t;
+             }
+             allow httpd_t commplex_main_port_t:tcp_socket name_connect;
+
+      5. Compile the module:
+
+             checkmodule -M -m -o nginx_commplex.mod nginx_commplex.te
+             semodule_package -o nginx_commplex.pp -m nginx_commplex.mod
+
+      6. Install the module:
+
+             semodule -i nginx_commplex.pp
+        
+         The `.mod` and `.pp` files can then safely be deleted.
+      
+      To uninstall the module, run the command:
+
+          semodule -r nginx_commplex
 
 layout: "layouts/view.njk"
 ---
