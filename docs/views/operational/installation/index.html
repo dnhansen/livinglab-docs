@@ -176,10 +176,24 @@
 </table>
 <p>Note the following:</p>
 <ul>
-<li>The PostgreSQL server packages depend on the client packages.</li>
-<li>On Rocky Linux, remember to enable the <code>postgresql</code> module before installing PostgreSQL packages.</li>
-<li>The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on Rocky, but on Debian?).</li>
-<li>The ASP.NET Core Runtime is not included in Debian's default package directory, so to install the package <code>aspnetcore-runtime-Y</code>, it is necessary to first install the package <code>packages-microsoft-prod.deb</code> from the <a href="https://packages.microsoft.com/config/debian/">Linux software repository for Microsoft products</a>. See also <a href="https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian">Microsoft's instructions</a> (TODO wget vs. curl?) for installing the package.</li>
+<li>
+<p>The PostgreSQL server packages depend on the client packages.</p>
+</li>
+<li>
+<p>On Rocky Linux, remember to enable the <code>postgresql</code> module before installing PostgreSQL packages.</p>
+</li>
+<li>
+<p>The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on Rocky, but on Debian?).</p>
+</li>
+<li>
+<p>The latest PostgreSQL version included in Debian 12.x (bookworm) is version 15. To install newer versions of both <code>postgresql-X</code> and <code>postgresql-client-X</code>, first install the package <code>postgresql-common</code> (which is a dependency of both of the former packages), and then run the script</p>
+<pre><code>/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+</code></pre>
+<p>to add the repository. See also <a href="https://www.postgresql.org/download/linux/debian/">PostgreSQL's instructions</a> for installing the package.</p>
+</li>
+<li>
+<p>The ASP.NET Core Runtime is not included in Debian's default package directory, so to install the package <code>aspnetcore-runtime-Y</code>, it is necessary to first install the package <code>packages-microsoft-prod.deb</code> from the <a href="https://packages.microsoft.com/config/debian/">Linux software repository for Microsoft products</a>. See also <a href="https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian">Microsoft's instructions</a> (TODO wget vs. curl?) for installing the package.</p>
+</li>
 </ul>
 
 

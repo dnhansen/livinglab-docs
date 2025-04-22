@@ -21,9 +21,19 @@ sections:
       | Nginx | `nginx` | `nginx` |
 
       Note the following:
+
       - The PostgreSQL server packages depend on the client packages.
+
       - On Rocky Linux, remember to enable the `postgresql` module before installing PostgreSQL packages.
+
       - The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on Rocky, but on Debian?).
+      
+      - The latest PostgreSQL version included in Debian 12.x (bookworm) is version 15. To install newer versions of both `postgresql-X` and `postgresql-client-X`, first install the package `postgresql-common` (which is a dependency of both of the former packages), and then run the script
+
+            /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+
+        to add the repository. See also [PostgreSQL's instructions](https://www.postgresql.org/download/linux/debian/) for installing the package.
+      
       - The ASP.NET Core Runtime is not included in Debian's default package directory, so to install the package `aspnetcore-runtime-Y`, it is necessary to first install the package `packages-microsoft-prod.deb` from the [Linux software repository for Microsoft products](https://packages.microsoft.com/config/debian/). See also [Microsoft's instructions](https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian) (TODO wget vs. curl?) for installing the package.
   - title: "Deployment on hosts"
     content: |
