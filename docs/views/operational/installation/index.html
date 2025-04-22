@@ -223,35 +223,58 @@
 
 
 
-<h2>PostgreSQL configuration (Rocky Linux)</h2>
+<h2>PostgreSQL configuration</h2>
 
 <p>TODO this is temporarily here.</p>
-<p>To configure the installation of the PostgreSQL server, perform the following actions on the database server:</p>
+<p>When installing PostgreSQL on Debian, the database cluster is automatically initialised, and the <code>postgresql</code> service is also automatically enabled and started. For more information, see the <a href="https://wiki.debian.org/PostgreSql">Debian wiki's PostgreSQL page</a>. However, on Rocky Linux this is not the case, so it is necessary to manually perform these tasks.</p>
+<p>The main configuration files are <code>postgresql.conf</code> and <code>pg_hba.conf</code>. These are located in the following directories (TODO Debian cluster name):</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Debian</th>
+<th>Rocky Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>postgresql.conf</code></td>
+<td><code>/etc/postgresql/&lt;version&gt;/&lt;cluster&gt;/</code></td>
+<td><code>/var/lib/pgsql/data/</code></td>
+</tr>
+<tr>
+<td><code>pg_hba.conf</code></td>
+<td><code>/etc/postgresql/&lt;version&gt;/&lt;cluster&gt;/</code></td>
+<td><code>/var/lib/pgsql/data/</code></td>
+</tr>
+</tbody>
+</table>
+<p>To configure the installation of the PostgreSQL server, perform the following actions on the database server. Only perform actions labeled &quot;Rocky Linux&quot; if the database server is running Rocky Linux.</p>
 <ol>
 <li>
-<p>Initialise the database cluster (create data directory, config files, etc. in <code>/var/lib/pgsql</code>):</p>
+<p>(Rocky Linux) Initialise the database cluster (create data directory, config files, etc. in <code>/var/lib/pgsql</code> (TODO where is this in Debian?)):</p>
 <pre><code>postgresql-setup --initdb
 </code></pre>
 </li>
 <li>
-<p>Allow external connections: In <code>/var/lib/pgsql/data/postgresql.conf</code>, change the line (TODO check the more secure way to do this)</p>
+<p>Allow external connections: In <code>postgresql.conf</code>, change the line (TODO check the more secure way to do this)</p>
 <pre><code>listen_addresses = '*'
 </code></pre>
 </li>
 <li>
-<p>Allow connections from the application server: In <code>/var/lib/pgsql/data/pg_hba.conf</code>, append the line</p>
+<p>Allow connections from the application server: In <code>pg_hba.conf</code>, append the line</p>
 <pre><code>host    all     all     172.16.2.82/32     trust
 </code></pre>
 <p>Note that the last column <code>trust</code> should be changed to configure password authentication. TODO</p>
 </li>
 <li>
-<p>Enable and start the PostgreSQL service:</p>
+<p>(Rocky Linux) Enable and start the PostgreSQL service:</p>
 <pre><code>systemctl enable postgresql
 systemctl start postgresql
 </code></pre>
 </li>
 <li>
-<p>Configure firewalld to allow traffic from the application server on port 5432 (TODO check if this is the best way):</p>
+<p>(Rocky Linux, TODO Debian nftables) Configure firewalld to allow traffic from the application server on port 5432 (TODO check if this is the best way):</p>
 <pre><code>sudo firewall-cmd --add-rich-rule='rule family=&quot;ipv4&quot; source address=&quot;172.16.2.82&quot; port port=5432 protocol=tcp accept' --permanent
 sudo firewall-cmd --reload
 </code></pre>
