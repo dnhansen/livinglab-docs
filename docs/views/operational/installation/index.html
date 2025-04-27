@@ -140,7 +140,7 @@
 
 
 
-<h2>Packages/modules</h2>
+<h2>Packages</h2>
 
 <p>In the following table, <code>X</code> refers to the most recent stable release of PostgreSQL available for the operating system, and <code>Y</code> refers to the latest version of .NET.</p>
 <table>
@@ -148,19 +148,19 @@
 <tr>
 <th>Element</th>
 <th>Debian</th>
-<th>Rocky Linux</th>
+<th>Red Hat</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PostgreSQL server</td>
 <td><code>postgresql-X</code></td>
-<td><code>postgresql:X/server</code></td>
+<td><code>postgresqlX-server</code></td>
 </tr>
 <tr>
 <td>PostgreSQL client</td>
 <td><code>postgresql-client-X</code></td>
-<td><code>postgresql:X/client</code></td>
+<td><code>postgresqlX</code></td>
 </tr>
 <tr>
 <td>ASP.NET Core Runtime</td>
@@ -180,16 +180,22 @@
 <p>The PostgreSQL server packages depend on the client packages.</p>
 </li>
 <li>
-<p>On Rocky Linux, remember to enable the <code>postgresql</code> module before installing PostgreSQL packages.</p>
-</li>
-<li>
-<p>The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on Rocky, but on Debian?).</p>
+<p>The ASP.NET Core Runtime depends on the .NET Runtime (TODO at least on RH, but on Debian?).</p>
 </li>
 <li>
 <p>The latest PostgreSQL version included in Debian 12.x (bookworm) is version 15. To install newer versions of both <code>postgresql-X</code> and <code>postgresql-client-X</code>, first install the package <code>postgresql-common</code> (which is a dependency of both of the former packages), and then run the script</p>
 <pre><code>/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 </code></pre>
-<p>to add the repository. See also <a href="https://www.postgresql.org/download/linux/debian/">PostgreSQL's instructions</a> for installing the package.</p>
+<p>to add the repository. Finally install the relevant package(s). See also <a href="https://www.postgresql.org/download/linux/debian/">PostgreSQL's instructions</a> for installing the package(s).</p>
+</li>
+<li>
+<p>The latest PostgreSQL version included in Red Hat 9 is version 16 (as a module). To install newer versions of both <code>postgresqlX-server</code> and <code>postgresqlX</code>, first install the PostgreSQL repository:</p>
+<pre><code>dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+</code></pre>
+<p>Then disable the built-in PostgreSQL module:</p>
+<pre><code>dnf -qy module disable postgresql
+</code></pre>
+<p>Finally install the relevant package(s). See also <a href="https://www.postgresql.org/download/linux/redhat/">PostgreSQL's instructions</a> for installing the package(s).</p>
 </li>
 <li>
 <p>The ASP.NET Core Runtime is not included in Debian's default package directory, so to install the package <code>aspnetcore-runtime-Y</code>, it is necessary to first install the package <code>packages-microsoft-prod.deb</code> from the <a href="https://packages.microsoft.com/config/debian/">Linux software repository for Microsoft products</a>. See also <a href="https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian">Microsoft's instructions</a> (TODO wget vs. curl?) for installing the package.</p>
@@ -226,40 +232,20 @@
 <h2>PostgreSQL configuration</h2>
 
 <p>TODO this is temporarily here.</p>
-<p>When installing PostgreSQL on Debian, the database cluster is automatically initialised, and the <code>postgresql</code> service is also automatically enabled and started. For more information, see the <a href="https://wiki.debian.org/PostgreSql">Debian wiki's PostgreSQL page</a>. However, on Rocky Linux this is not the case, so it is necessary to manually perform these tasks.</p>
-<p>The main configuration files are <code>postgresql.conf</code> and <code>pg_hba.conf</code>. These are located in the following directories (TODO Debian cluster name):</p>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Debian</th>
-<th>Rocky Linux</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>postgresql.conf</code></td>
-<td><code>/etc/postgresql/&lt;version&gt;/&lt;cluster&gt;/</code></td>
-<td><code>/var/lib/pgsql/data/</code></td>
-</tr>
-<tr>
-<td><code>pg_hba.conf</code></td>
-<td><code>/etc/postgresql/&lt;version&gt;/&lt;cluster&gt;/</code></td>
-<td><code>/var/lib/pgsql/data/</code></td>
-</tr>
-</tbody>
-</table>
-<p>To configure the installation of the PostgreSQL server, perform the following actions on the database server. Only perform actions labeled &quot;Rocky Linux&quot; if the database server is running Rocky Linux.</p>
+<p>When installing PostgreSQL on Debian, the database cluster is automatically initialised, and the <code>postgresql</code> service is also automatically enabled and started. For more information, see the <a href="https://wiki.debian.org/PostgreSql">Debian wiki's PostgreSQL page</a>. However, on Red Hat this is not the case, so it is necessary to manually perform these tasks.</p>
+<p>The main configuration files are <code>postgresql.conf</code> and <code>pg_hba.conf</code>. On Red Hat, these are located in the data directory <code>/var/lib/pgsql/&lt;version&gt;/data/</code>. On Debian they are instead located in <code>/etc/postgresql/&lt;version&gt;/&lt;cluster&gt;/</code>, where <code>&lt;cluster&gt;</code> is the name of the database cluster, usually <code>main</code>. The command <code>pg_lsclusters</code> shows all clusters.</p>
+<p>To configure the installation of the PostgreSQL server, perform the following actions on the database server.</p>
 <ol>
 <li>
-<p>(Rocky Linux) Initialise the database cluster (create data directory, config files, etc. in <code>/var/lib/pgsql</code> (TODO where is this in Debian?)):</p>
-<pre><code>postgresql-setup --initdb
+<p>(Red Hat, optional) If commands such as <code>pg_ctl</code> are not immediately available on the <code>PATH</code>, add the <code>/usr/pgsql-&lt;version&gt;/lib</code> directory to <code>PATH</code>.</p>
+</li>
+<li>
+<p>(Red Hat) Initialise the database cluster (create data directory, config files, etc. in <code>/var/lib/pgsql</code>):</p>
+<pre><code>postgresql-X-setup initdb
 </code></pre>
 </li>
 <li>
-<p>Allow external connections: In <code>postgresql.conf</code>, change the line (TODO check the more secure way to do this)</p>
-<pre><code>listen_addresses = '*'
-</code></pre>
+<p>Allow external connections: In <code>postgresql.conf</code>, change the value of <code>listen_addresses</code> to <code>'*'</code>.</p>
 </li>
 <li>
 <p>Allow connections from the application server: In <code>pg_hba.conf</code>, append the line</p>
@@ -268,13 +254,18 @@
 <p>Note that the last column <code>trust</code> should be changed to configure password authentication. TODO</p>
 </li>
 <li>
-<p>(Rocky Linux) Enable and start the PostgreSQL service:</p>
-<pre><code>systemctl enable postgresql
-systemctl start postgresql
+<p>(Red Hat) Enable and start the PostgreSQL service:</p>
+<pre><code>systemctl enable postgresql-&lt;version&gt;
+systemctl start postgresql-&lt;version&gt;
 </code></pre>
 </li>
 <li>
-<p>(Rocky Linux, TODO Debian nftables) Configure firewalld to allow traffic from the application server on port 5432 (TODO check if this is the best way):</p>
+<p>(Debian) Restart the PostgreSQL service:</p>
+<pre><code>systemctl restart postgresql
+</code></pre>
+</li>
+<li>
+<p>(Red Hat, TODO Debian nftables) Configure firewalld to allow traffic from the application server on port 5432 (TODO check if this is the best way):</p>
 <pre><code>sudo firewall-cmd --add-rich-rule='rule family=&quot;ipv4&quot; source address=&quot;172.16.2.82&quot; port port=5432 protocol=tcp accept' --permanent
 sudo firewall-cmd --reload
 </code></pre>
@@ -283,7 +274,22 @@ sudo firewall-cmd --reload
 <p>Afterwards, test the connection on the application server:</p>
 <pre><code>psql -h 172.16.2.81 -U postgres -d postgres
 </code></pre>
+<p>If the PostgreSQL server is listening on another port than 5432, specify this using the <code>-p</code> flag.</p>
 <p>TODO: Consider how much of this can be brought under configuration management.</p>
+<h3>Troubleshooting</h3>
+<p>Error:</p>
+<pre><code>Job for postgresql-17.service failed because the control process exited with error code.
+</code></pre>
+<p>More information: Inspect the logs (on Red Hat located in the data directory, TODO check Debian).</p>
+<p>Potential causes:</p>
+<ul>
+<li>
+<p>The port 5432 is already in use. If the process listening on 5432 cannot instead listen on another port, change the port PostgreSQL will listen to by changing the value of the variable <code>port</code> in <code>postgresql.conf</code>.</p>
+</li>
+<li>
+<p>A lock file cannot be created in the directory <code>/run/postgresql</code>, either since it does not exist or because the <code>postgres</code> system user does not have the right permissions. Ensure that this directory exists and is owned by <code>postgres</code>.</p>
+</li>
+</ul>
 
 
 
