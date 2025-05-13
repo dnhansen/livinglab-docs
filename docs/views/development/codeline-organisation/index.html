@@ -168,7 +168,7 @@
 <li><code>LivingLab.sln</code>: The solution file referencing every project.</li>
 <li><code>Directory.Build.props</code>: Folder-specific settings. Note that by default, only the most specific (i.e., most deeply nested in the directory hierarchy) such file is read, cf. <a href="https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory#use-case-multi-level-merging">Microsoft's documentation</a>.</li>
 <li><code>src/</code> and <code>test/</code>: Production and test code, respectively.</li>
-<li><code>LivingLab*.csproj</code>: Project-specific settings. Note that every project (both in <code>src</code> and <code>test</code>) should reference the composition root (the <code>LivingLab</code> project), and that the composition root should reference every project in <code>src</code> (cf. the <a href="/livinglab-docs/views/development/module-structure/">module structure</a>).</li>
+<li><code>LivingLab*.csproj</code>: Project-specific settings. Note that every project (both in <code>src</code> and <code>test</code>) should reference the composition root (the <code>LivingLab</code> project), and that the composition root should reference every project in <code>src</code> (cf. the <a href="/livinglab-docs/views/development/module-structure/">module structure</a>). References can be added with the <code>dotnet add reference</code> command (cf. <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-reference-add">Microsoft's documentation</a>).</li>
 <li><code>Program.cs</code>: The application entry point. Only the composition root should contain an entry point.</li>
 <li><code>appsettings.Development.json</code>: TODO</li>
 <li><code>appsettings.json</code>: TODO</li>
@@ -182,7 +182,14 @@
 
 <h2>Testing</h2>
 
-<p>TODO</p>
+<p>The <a href="https://xunit.net/">xUnit.net</a> tool is used for unit testing. Test projects can be created with the <code>xunit</code> template using the command <code>dotnet new xunit</code>.</p>
+<p>Tests should follow best practices unless there is a good reason not to (cf. especially <a href="https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#best-practices">Microsoft's documentation</a>):</p>
+<ul>
+<li>Follow test naming standards.</li>
+<li>Use the &quot;Arrange, Act, Assert&quot; pattern when appropriate. It is optional to demarcate each task with comments.</li>
+<li>TODO</li>
+</ul>
+<p>TODO <a href="https://learn.microsoft.com/en-us/ef/core/testing/">testing against production database vs without</a></p>
 
 
 

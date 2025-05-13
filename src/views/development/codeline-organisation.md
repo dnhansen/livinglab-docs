@@ -38,7 +38,7 @@ sections:
       - `LivingLab.sln`: The solution file referencing every project.
       - `Directory.Build.props`: Folder-specific settings. Note that by default, only the most specific (i.e., most deeply nested in the directory hierarchy) such file is read, cf. [Microsoft's documentation](https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory#use-case-multi-level-merging).
       - `src/` and `test/`: Production and test code, respectively.
-      - `LivingLab*.csproj`: Project-specific settings. Note that every project (both in `src` and `test`) should reference the composition root (the `LivingLab` project), and that the composition root should reference every project in `src` (cf. the [module structure](/views/development/module-structure/)).
+      - `LivingLab*.csproj`: Project-specific settings. Note that every project (both in `src` and `test`) should reference the composition root (the `LivingLab` project), and that the composition root should reference every project in `src` (cf. the [module structure](/views/development/module-structure/)). References can be added with the `dotnet add reference` command (cf. [Microsoft's documentation](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-reference-add)).
       - `Program.cs`: The application entry point. Only the composition root should contain an entry point.
       - `appsettings.Development.json`: TODO
       - `appsettings.json`: TODO
@@ -48,7 +48,15 @@ sections:
 
       The directories `LivingLab` and `LivingLab.Tests` contain .NET projects, and the solution file `LivingLab.sln` should reference both projects.
   - title: Testing
-    content: TODO
+    content: |
+      The [xUnit.net](https://xunit.net/) tool is used for unit testing. Test projects can be created with the `xunit` template using the command `dotnet new xunit`.
+      
+      Tests should follow best practices unless there is a good reason not to (cf. especially [Microsoft's documentation](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#best-practices)):
+      - Follow test naming standards.
+      - Use the "Arrange, Act, Assert" pattern when appropriate. It is optional to demarcate each task with comments.
+      - TODO
+
+      TODO [testing against production database vs without](https://learn.microsoft.com/en-us/ef/core/testing/)
   - title: Configuration management
     content: |
       The project shall use Git for version control. Developers shall strive to integrate changes to the mainline branch as soon as their code is healthy (that is, they shall perform continuous integration, cf. {% cite 'fowler-ci' %}). Additional branches are allowed in personal workspaces of developers, as long as these are continuously merged with the mainline branch. Note that semi-integration, i.e., developers regularly pulling changes from mainline, is not sufficient, cf. {% cite 'fowler-ci' %}.
