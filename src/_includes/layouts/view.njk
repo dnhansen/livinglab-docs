@@ -18,7 +18,9 @@ layout: layouts/base.njk
 </div>
 <p class="presentation-key">Model kind: {{ model.modelKind }}</p>
 <p>Source: {% cite model.source.id %}, p. {{ model.source.page }}</p>
-
+{% if model.description -%}
+{{ model.description | markdownify | renderContent | safe }}
+{%- endif %}
 <h2>Elements</h2>
 <dl>
     {% for element in elements %}

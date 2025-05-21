@@ -46,5 +46,13 @@
     {
         "term": "composition root",
         "definition": "A single, logical location in an application where modules are composed together. See {% cite 'van-deursen-seemann-di' %}, §4.1."
+    },
+    {
+        "term": "query object",
+        "definition": "TODO"
+    },
+    {
+        "term": "unit of work",
+        "definition": "TODO"
     }
 ]

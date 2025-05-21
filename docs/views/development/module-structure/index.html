@@ -138,6 +138,7 @@
 </div>
 <p class="presentation-key">Model kind: UML package diagram</p>
 <p>Source: <a href="/livinglab-docs/references/#rozanski-woods">[7]</a>, p. 360</p>
+<p>TODO model description</p>
 
 <h2>Elements</h2>
 <dl>
@@ -147,25 +148,44 @@
 </dd>
     
     <dt>Presentation</dt>
-    <dd><p>This layer implements a minimal API containing the following:</p>
+    <dd><p>This layer implements an ASP.NET Core minimal API containing the following:</p>
 <ul>
 <li>A middleware pipeline, containing elements used for e.g. authentication and authorisation, logging, and endpoint routing.</li>
-<li>API endpoints, by specifying which URLs are exposed by the API, and which handlers (in the Domain/application layer) should be called with which arguments.</li>
+<li>API endpoints, handling API requests and delegating to the service layer.</li>
+<li>Data transfer objects as appropriate, for encapsulating API requests and responses. Can be used to avoid exposing domain entities to the API user.</li>
 </ul>
-<p>The Presentation layer depends on the ASP.NET Core framework for setting up the API, adding middleware elements, dependency injection containers, and adding API endpoints.</p>
-<p>This layer has a source code dependency on the Domain/application layer through references to methods used as API endpoint handlers.</p>
+<p>The presentation layer depends on the ASP.NET Core framework for setting up the API, adding middleware elements, dependency injection containers, and adding API endpoints.</p>
+<p>This layer has source code dependencies on the service layer through references to concrete services, query objects, or DTOs passed to services.</p>
 </dd>
     
-    <dt>Domain/application</dt>
-    <dd><p>In this layer the domain/business logic is implemented. Note that this layer cannot depend on any other layer, nor on the ASP.NET Core or EF Core frameworks. Hence it must expose interfaces that are implemented by the Infrastructure layer, and rely on dependency injection to obtain references to entities in said layer.</p>
+    <dt>Service</dt>
+    <dd><p>This layer implements services or the parts of services that do not depend on domain logic. It contains the following:</p>
+<ul>
+<li>The service classes themselves.</li>
+<li>Runners that are responsible for running domain logic for service classes, as well as for committing transactions to the database.</li>
+<li>Query objects that help perform CRUD operations. Note that query objects are idiomatically implemented as extension methods in C#.</li>
+<li>Data transfer objects used in database queries, in particular in query objects.</li>
+</ul>
+<p>This layer has dependencies on the domain layer, since services directly execute transaction scripts. It also depends on the data layer and EF Core since runners commit transactions to the database.</p>
 </dd>
     
-    <dt>Infrastructure</dt>
-    <dd><p>This layer uses EF Core to access the DMBS. It has a source code dependency on the Domain/application layer through implementations of interfaces defined in said layer.</p>
+    <dt>Domain</dt>
+    <dd><p>The domain layer does not contain a rich domain model, but instead contains transaction scripts responsible for implementing domain logic. It also defines the interfaces necessary for database access.</p>
+<p>This layer depends on the entities in the data layer, but otherwise has no dependencies.</p>
+</dd>
+    
+    <dt>Data</dt>
+    <dd><p>This layer is responsible for database access. It contains the following:</p>
+<ul>
+<li>Domain entities. These are located here instead of in the domain layer since they are tightly coupled to EF Core. No domain logic is implemented in these entities.</li>
+<li>The DbContext, which itself implements a unit of work.</li>
+<li>Database access classes, possibly specific to each transaction script in the domain layer. These implement the interfaces defined in the domain layer.</li>
+</ul>
+<p>This layer has dependencies on the domain layer by dependency inversion. It also depends on EF Core for database access.</p>
 </dd>
     
     <dt>Platform</dt>
-    <dd><p>This layer encapsulates the libraries offered by the .NET platform. Note that only the Presentation layer may have dependencies on ASP.NET Core, while only the Infrastructure layer may depend on EF Core. In contrast, all packages except for the client (which is not implemented using .NET) may depend on the .NET Base Class Library.</p>
+    <dd><p>This layer encapsulates the libraries offered by the .NET platform. Note that only the presentation layer may have dependencies on ASP.NET Core, while only the service and data layers may depend on EF Core. In contrast, all packages except for the client (which is not implemented using .NET) may depend on the .NET Base Class Library.</p>
 </dd>
     
 </dl>
